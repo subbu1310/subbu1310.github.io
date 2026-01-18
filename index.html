@@ -4,9 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Subramanian Veerappan | Process Design Engineer</title>
-
   <style>
-    /* Reset and body */
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
@@ -31,20 +29,53 @@
       padding: 14px 10%;
       z-index: 10;
       display: flex;
+      align-items: center;
       justify-content: flex-end;
     }
-
     nav a {
       margin-left: 24px;
       font-weight: 500;
+    }
+
+    .logo {
+      width: 50px;
+      height: 50px;
+      margin-right: auto;
     }
 
     section {
       min-height: 100vh;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       padding: 80px 10%;
       box-sizing: border-box;
+      flex-wrap: wrap;
+    }
+
+    .section-photo img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 16px;
+      background: #e5e7eb;
+    }
+
+    .section-text {
+      max-width: 600px;
+    }
+
+    .section.left-photo {
+      flex-direction: row;
+    }
+
+    .section.right-photo {
+      flex-direction: row-reverse;
+    }
+
+    .hero {
+      flex-direction: column;
+      justify-content: flex-start;
     }
 
     h1 {
@@ -59,11 +90,6 @@
 
     h3 {
       margin-bottom: 8px;
-    }
-
-    .hero {
-      justify-content: flex-start;
-      flex-direction: column;
     }
 
     .subtitle {
@@ -82,52 +108,32 @@
       font-weight: 500;
     }
 
-    .about {
+    .skills-grid {
       display: flex;
-      align-items: center;
       gap: 60px;
-    }
-
-    .about img {
-      width: 250px;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 16px;
-      background: #e5e7eb; /* placeholder grey */
-    }
-
-    .about-text {
-      max-width: 600px;
-    }
-
-    .skills-container {
-      display: flex;
-      gap: 80px;
       flex-wrap: wrap;
     }
 
-    .skills-list {
-      flex: 1;
+    .skills-category {
+      min-width: 200px;
     }
 
-    .skills-list h3 {
+    .skills-category h3 {
       margin-bottom: 8px;
-      font-size: 1.2rem;
     }
 
-    .skills-list ul {
+    .skills-category ul {
       list-style-type: disc;
       padding-left: 20px;
-      margin-top: 5px;
     }
 
-    .skills-list ul li {
+    .skills-category ul li {
       margin-bottom: 6px;
-      font-size: 0.95rem;
       color: #374151;
+      font-size: 0.95rem;
     }
 
-    .projects .project {
+    .project {
       margin-bottom: 50px;
       max-width: 800px;
     }
@@ -151,41 +157,32 @@
       font-size: 0.9rem;
     }
 
-    /* SV Logo */
-    .logo {
-      width: 50px;
-      height: 50px;
-      margin-right: auto;
-    }
-
     @media (max-width: 900px) {
       section {
-        flex-direction: column;
+        flex-direction: column !important;
         text-align: center;
       }
-
-      .about {
-        flex-direction: column;
+      .section-photo {
+        margin-bottom: 20px;
       }
-
-      .skills-container {
+      .skills-grid {
         flex-direction: column;
+        gap: 20px;
       }
-
       .certifications {
         flex-direction: column;
+        gap: 20px;
       }
-
       nav {
         justify-content: center;
       }
     }
   </style>
 </head>
+
 <body>
 
 <nav>
-  <!-- SV Logo -->
   <svg class="logo" viewBox="0 0 100 100">
     <text x="0" y="70" font-size="80" font-weight="bold" fill="#2563eb">SV</text>
   </svg>
@@ -208,18 +205,14 @@
 </section>
 
 <!-- About Section -->
-<section id="about" class="about">
-  <img src="https://via.placeholder.com/250" alt="Subramanian Veerappan">
-  <div class="about-text">
+<section id="about" class="section left-photo">
+  <div class="section-photo">
+    <img src="https://via.placeholder.com/250" alt="Subramanian Veerappan">
+  </div>
+  <div class="section-text">
     <h2>About Me</h2>
-    <p>
-      I am a Process Design Engineer with a strong background in thermal and process engineering,
-      currently working on sustainable energy projects within regulated industrial environments.
-    </p>
-    <p>
-      My experience includes process simulation using DWSIM, development of PFDs and P&IDs,
-      equipment sizing, pressure safety calculations, and Python-based data analysis.
-    </p>
+    <p>I am a Process Design Engineer with experience in thermal and process engineering, currently working on sustainable energy projects.</p>
+    <p>Skills include process simulation (DWSIM), PFD & P&ID development, equipment sizing, PSV calculations, and Python-based data analysis.</p>
     <p>
       <a href="Subramanian_Resume.pdf" download>Resume</a> |
       <a href="mailto:vrsubramanian13@gmail.com">Email Me</a> |
@@ -229,73 +222,102 @@
 </section>
 
 <!-- Skills Section -->
-<section id="skills">
-  <h2>Core Skills</h2>
-  <div class="skills-container">
-    <div class="skills-list">
-      <h3>Process & Design</h3>
-      <ul>
-        <li>FEED Studies & Process Simulation</li>
-        <li>Mass & Energy Balance Calculations</li>
-        <li>Heat Transfer & Equipment Sizing</li>
-        <li>PSV & Safety Calculations</li>
-      </ul>
+<section id="skills" class="section right-photo">
+  <div class="section-text">
+    <h2>Core Skills</h2>
+    <div class="skills-grid">
+      <div class="skills-category">
+        <h3>Process & Design</h3>
+        <ul>
+          <li>FEED Studies</li>
+          <li>Mass & Energy Balance</li>
+          <li>Heat Transfer & Equipment Sizing</li>
+          <li>PSV & Safety Calculations</li>
+        </ul>
+      </div>
+      <div class="skills-category">
+        <h3>Tools & Software</h3>
+        <ul>
+          <li>DWSIM, Aspen HYSYS</li>
+          <li>AutoCAD P&ID</li>
+          <li>Python & MATLAB</li>
+          <li>Excel & Data Visualization</li>
+        </ul>
+      </div>
+      <div class="skills-category">
+        <h3>Analysis & Simulation</h3>
+        <ul>
+          <li>Process Modelling</li>
+          <li>Steady-State & Transient Simulation</li>
+          <li>Thermal Analysis</li>
+          <li>Data Analysis & Reporting</li>
+        </ul>
+      </div>
     </div>
-    <div class="skills-list">
-      <h3>Tools & Software</h3>
-      <ul>
-        <li>DWSIM, Aspen HYSYS</li>
-        <li>AutoCAD P&ID</li>
-        <li>Python & MATLAB for Data Analysis</li>
-        <li>Excel & Visualization</li>
-      </ul>
-    </div>
+  </div>
+  <div class="section-photo">
+    <img src="https://via.placeholder.com/250" alt="Skills Illustration">
   </div>
 </section>
 
 <!-- Projects Section -->
-<section id="projects" class="projects">
-  <h2>Selected Projects</h2>
-  <div class="project">
-    <h3>Pyrolysis Process Simulation & FEED Support</h3>
-    <p>Developed steady-state process models using DWSIM for early-stage FEED studies. Generated mass and energy balances, stream data tables, and supported equipment selection.</p>
+<section id="projects" class="section left-photo">
+  <div class="section-photo">
+    <img src="https://via.placeholder.com/250" alt="Project Illustration">
   </div>
-  <div class="project">
-    <h3>Heat Transfer & Safe Shutdown Modelling</h3>
-    <p>Performed heat transfer calculations and nitrogen flow modelling to ensure positive pressure during safe reactor shutdown, preventing air ingress and supporting process safety requirements.</p>
-  </div>
-  <div class="project">
-    <h3>PSV Sizing & Process Safety Calculations</h3>
-    <p>Conducted and reviewed PSV sizing calculations for reactors and condensers in accordance with industry standards, contributing to safe and compliant process design.</p>
+  <div class="section-text">
+    <h2>Selected Projects</h2>
+    <div class="project">
+      <h3>Pyrolysis Process Simulation & FEED Support</h3>
+      <p>Developed steady-state process models using DWSIM for early-stage FEED studies. Generated mass and energy balances, stream data tables, and supported equipment selection.</p>
+    </div>
+    <div class="project">
+      <h3>Heat Transfer & Safe Shutdown Modelling</h3>
+      <p>Performed heat transfer calculations and nitrogen flow modelling to ensure positive pressure during safe reactor shutdown, preventing air ingress and supporting process safety requirements.</p>
+    </div>
+    <div class="project">
+      <h3>PSV Sizing & Process Safety Calculations</h3>
+      <p>Conducted and reviewed PSV sizing calculations for reactors and condensers in accordance with industry standards, contributing to safe and compliant process design.</p>
+    </div>
   </div>
 </section>
 
 <!-- Certifications & References -->
-<section id="certifications">
-  <h2>Certifications & References</h2>
-  <div class="certifications">
-    <div class="cert-block">
-      <h3>Certifications</h3>
-      <ul>
-        <li>Certificate 1</li>
-        <li>Certificate 2</li>
-        <li>Certificate 3</li>
-      </ul>
+<section id="certifications" class="section right-photo">
+  <div class="section-text">
+    <h2>Certifications & References</h2>
+    <div class="certifications">
+      <div class="cert-block">
+        <h3>Certifications</h3>
+        <ul>
+          <li>Certificate 1</li>
+          <li>Certificate 2</li>
+          <li>Certificate 3</li>
+        </ul>
+      </div>
+      <div class="cert-block">
+        <h3>References</h3>
+        <ul>
+          <li>Recommendation 1</li>
+        </ul>
+      </div>
     </div>
-    <div class="cert-block">
-      <h3>References</h3>
-      <ul>
-        <li>Recommendation 1</li>
-      </ul>
-    </div>
+  </div>
+  <div class="section-photo">
+    <img src="https://via.placeholder.com/250" alt="Certificate Illustration">
   </div>
 </section>
 
 <!-- Contact Section -->
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:vrsubramanian13@gmail.com">vrsubramanian13@gmail.com</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/subramanian-veerappan-b195011a0">linkedin.com/in/subramanian-veerappan-b195011a0</a></p>
+<section id="contact" class="section left-photo">
+  <div class="section-photo">
+    <img src="https://via.placeholder.com/250" alt="Contact Illustration">
+  </div>
+  <div class="section-text">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:vrsubramanian13@gmail.com">vrsubramanian13@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/subramanian-veerappan-b195011a0">linkedin.com/in/subramanian-veerappan-b195011a0</a></p>
+  </div>
 </section>
 
 <footer>
@@ -304,4 +326,3 @@
 
 </body>
 </html>
-
