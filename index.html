@@ -15,7 +15,7 @@
       margin: 0;
       font-family: 'Inter', sans-serif;
       color: #1f2937;
-      background: #d9d9d9; /* darker grey */
+      background: #cfcfcf; /* slightly darker grey */
       line-height: 1.7;
     }
 
@@ -57,58 +57,7 @@
       padding: 80px 10%;
       box-sizing: border-box;
       min-height: auto;
-    }
-
-    .section-photo {
       position: relative;
-    }
-
-    .section-photo img {
-      width: 420px;   /* slightly bigger About Me photo */
-      height: 460px;
-      object-fit: cover;
-      border-radius: 16px;
-      background: #e5e7eb;
-      position: relative;
-      z-index: 2;
-    }
-
-    .section-text {
-      max-width: 600px;
-    }
-
-    .section.left-photo {
-      flex-direction: row;
-    }
-
-    .section.right-photo {
-      flex-direction: row-reverse;
-    }
-
-    /* Decorative blobs around About Me photo */
-    .blob {
-      position: absolute;
-      border-radius: 50%;
-      background: #dbeafe; /* soft blue */
-      z-index: 1;
-    }
-    .blob.top-left {
-      width: 80px;
-      height: 80px;
-      top: -20px;
-      left: -20px;
-    }
-    .blob.bottom-left {
-      width: 60px;
-      height: 60px;
-      bottom: -20px;
-      left: 10px;
-    }
-    .blob.bottom-right {
-      width: 50px;
-      height: 50px;
-      bottom: 0;
-      right: -20px;
     }
 
     /* Hero Section */
@@ -123,7 +72,7 @@
     }
 
     .hero-image img {
-      max-width: 560px;  /* increased size */
+      max-width: 580px; /* bigger hero image */
       width: 100%;
       height: auto;
       border-radius: 16px;
@@ -144,7 +93,7 @@
       margin-bottom: 6px;
       letter-spacing: -0.02em;
       line-height: 1.1;
-      white-space: nowrap; /* name stays in one line */
+      white-space: nowrap; /* full name in one line */
     }
 
     .hero-title {
@@ -152,7 +101,7 @@
       font-weight: 400;
       color: #374151;
       margin-bottom: 16px;
-      max-width: 380px; /* tagline wraps in 2 lines */
+      max-width: 400px; /* wraps in 2 lines */
       line-height: 1.5;
     }
 
@@ -164,15 +113,60 @@
       line-height: 1.6;
     }
 
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
+    /* About Me Section */
+    .section-photo {
+      position: relative;
+      margin-right: 40px; /* pushes photo closer to text */
     }
 
-    h3 {
-      margin-bottom: 8px;
+    .section-photo img {
+      width: 450px;   /* bigger About Me photo */
+      height: 480px;
+      object-fit: cover;
+      border-radius: 16px;
+      z-index: 2;
+      position: relative;
     }
 
+    /* Decorative blobs behind About photo */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      background: #dbeafe;
+      z-index: 1;
+    }
+    .blob1 {
+      width: 120px;
+      height: 120px;
+      top: -30px;
+      left: -40px;
+    }
+    .blob2 {
+      width: 80px;
+      height: 80px;
+      bottom: -20px;
+      left: 10px;
+    }
+    .blob3 {
+      width: 60px;
+      height: 60px;
+      bottom: 0;
+      right: -30px;
+    }
+
+    .section-text {
+      max-width: 600px;
+    }
+
+    .section.left-photo {
+      flex-direction: row;
+    }
+
+    .section.right-photo {
+      flex-direction: row-reverse;
+    }
+
+    /* Core Skills */
     .skills-grid {
       display: flex;
       gap: 60px;
@@ -181,10 +175,6 @@
 
     .skills-category {
       min-width: 200px;
-    }
-
-    .skills-category h3 {
-      margin-bottom: 8px;
     }
 
     .skills-category ul {
@@ -198,11 +188,13 @@
       font-size: 0.95rem;
     }
 
+    /* Projects */
     .project {
       margin-bottom: 50px;
       max-width: 800px;
     }
 
+    /* Certifications */
     .certifications {
       display: flex;
       gap: 60px;
@@ -239,7 +231,7 @@
         text-align: center;
       }
       .section-photo {
-        margin-bottom: 20px;
+        margin: 0 auto 20px auto;
       }
       .skills-grid {
         flex-direction: column;
@@ -289,9 +281,9 @@
 <section id="about" class="section left-photo">
   <div class="section-photo">
     <img src="subbu.png" alt="Subramanian Veerappan">
-    <div class="blob top-left"></div>
-    <div class="blob bottom-left"></div>
-    <div class="blob bottom-right"></div>
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
   </div>
   <div class="section-text">
     <h2>About Me</h2>
@@ -305,7 +297,104 @@
   </div>
 </section>
 
-<!-- Remaining sections (Skills, Projects, Certifications, Contact) can be added similarly -->
+<!-- Skills Section -->
+<section id="skills" class="section left-photo">
+  <div class="section-photo">
+    <img src="https://via.placeholder.com/250" alt="Skills Illustration">
+  </div>
+  <div class="section-text">
+    <h2>Core Skills</h2>
+    <div class="skills-grid">
+      <div class="skills-category">
+        <h3>Process & Design</h3>
+        <ul>
+          <li>FEED Studies</li>
+          <li>Mass & Energy Balance</li>
+          <li>Heat Transfer & Equipment Sizing</li>
+          <li>PSV & Safety Calculations</li>
+        </ul>
+      </div>
+      <div class="skills-category">
+        <h3>Tools & Software</h3>
+        <ul>
+          <li>DWSIM, Aspen HYSYS</li>
+          <li>AutoCAD P&ID</li>
+          <li>Python & MATLAB</li>
+          <li>Excel & Data Visualization</li>
+        </ul>
+      </div>
+      <div class="skills-category">
+        <h3>Analysis & Simulation</h3>
+        <ul>
+          <li>Process Modelling</li>
+          <li>Steady-State & Transient Simulation</li>
+          <li>Thermal Analysis</li>
+          <li>Data Analysis & Reporting</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="section right-photo">
+  <div class="section-photo">
+    <img src="https://via.placeholder.com/250" alt="Project Illustration">
+  </div>
+  <div class="section-text">
+    <h2>Selected Projects</h2>
+    <div class="project">
+      <h3>Pyrolysis Process Simulation & FEED Support</h3>
+      <p>Developed steady-state process models using DWSIM for early-stage FEED studies. Generated mass and energy balances, stream data tables, and supported equipment selection.</p>
+    </div>
+    <div class="project">
+      <h3>Heat Transfer & Safe Shutdown Modelling</h3>
+      <p>Performed heat transfer calculations and nitrogen flow modelling to ensure positive pressure during safe reactor shutdown, preventing air ingress and supporting process safety requirements.</p>
+    </div>
+    <div class="project">
+      <h3>PSV Sizing & Process Safety Calculations</h3>
+      <p>Conducted and reviewed PSV sizing calculations for reactors and condensers in accordance with industry standards, contributing to safe and compliant process design.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Certifications Section -->
+<section id="certifications" class="section left-photo">
+  <div class="section-photo">
+    <img src="https://via.placeholder.com/250" alt="Certificate Illustration">
+  </div>
+  <div class="section-text">
+    <h2>Certifications & References</h2>
+    <div class="certifications">
+      <div class="cert-block">
+        <h3>Certifications</h3>
+        <ul>
+          <li>Certificate 1</li>
+          <li>Certificate 2</li>
+          <li>Certificate 3</li>
+        </ul>
+      </div>
+      <div class="cert-block">
+        <h3>References</h3>
+        <ul>
+          <li>Recommendation 1</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="section right-photo">
+  <div class="section-photo">
+    <img src="https://via.placeholder.com/250" alt="Contact Illustration">
+  </div>
+  <div class="section-text">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:vrsubramanian13@gmail.com">vrsubramanian13@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/subramanian-veerappan-b195011a0">linkedin.com/in/subramanian-veerappan-b195011a0</a></p>
+  </div>
+</section>
 
 <footer>
   © 2026 Subramanian Veerappan
