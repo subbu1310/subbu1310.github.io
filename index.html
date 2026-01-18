@@ -50,22 +50,24 @@
     }
 
     section {
-      min-height: 100vh;
+      min-height: auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 80px 10%;
+       padding-top: 60px;  /* smaller gap from hero */
+        padding-bottom: 60px;
       box-sizing: border-box;
       flex-wrap: wrap;
     }
 
-    .section-photo img {
-      width: 350px;
-      height: 400px;
-      object-fit: cover;
-      border-radius: 16px;
-      background: #e5e7eb;
-    }
+.section-photo img {
+  width: 400px;   /* bigger */
+  height: 450px;  /* bigger */
+  object-fit: cover;
+  border-radius: 16px;
+  background: #e5e7eb;
+}
+
 
     .section-text {
       max-width: 600px;
@@ -90,13 +92,15 @@
       gap: 80px;
     }
 
-   .hero-image img {
-  max-width: 480px;
+.hero-image img {
+  max-width: 540px;  /* bigger */
   width: 100%;
+  height: auto;      /* keep aspect ratio */
   border-radius: 16px;
   object-fit: cover;
   box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
+
     
 .hero-text {
   max-width: 520px;
