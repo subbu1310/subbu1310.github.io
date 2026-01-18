@@ -15,7 +15,7 @@
       margin: 0;
       font-family: 'Inter', sans-serif;
       color: #1f2937;
-      background: #cfcfcf; /* slightly darker grey */
+      background: #cfcfcf; /* darker grey */
       line-height: 1.7;
     }
 
@@ -60,6 +60,59 @@
       position: relative;
     }
 
+    .section-photo {
+      position: relative;
+      margin-right: 40px; /* moves photo closer to text */
+    }
+
+    .section-photo img {
+      width: 460px;   /* larger About Me photo */
+      height: 480px;
+      object-fit: cover;
+      border-radius: 16px;
+      background: #e5e7eb;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Decorative shapes around photo (behind, not on photo) */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      background: #dbeafe; /* soft blue */
+      z-index: 1;
+    }
+    .blob.top-left {
+      width: 120px;
+      height: 120px;
+      top: -40px;
+      left: -40px;
+    }
+    .blob.bottom-left {
+      width: 80px;
+      height: 80px;
+      bottom: -20px;
+      left: -20px;
+    }
+    .blob.bottom-right {
+      width: 100px;
+      height: 100px;
+      bottom: -40px;
+      right: -40px;
+    }
+
+    .section-text {
+      max-width: 600px;
+    }
+
+    .section.left-photo {
+      flex-direction: row;
+    }
+
+    .section.right-photo {
+      flex-direction: row-reverse;
+    }
+
     /* Hero Section */
     .hero {
       display: flex;
@@ -72,7 +125,7 @@
     }
 
     .hero-image img {
-      max-width: 580px; /* bigger hero image */
+      max-width: 580px;  /* bigger hero image */
       width: 100%;
       height: auto;
       border-radius: 16px;
@@ -93,7 +146,7 @@
       margin-bottom: 6px;
       letter-spacing: -0.02em;
       line-height: 1.1;
-      white-space: nowrap; /* full name in one line */
+      white-space: nowrap; /* name stays in one line */
     }
 
     .hero-title {
@@ -101,7 +154,7 @@
       font-weight: 400;
       color: #374151;
       margin-bottom: 16px;
-      max-width: 400px; /* wraps in 2 lines */
+      max-width: 420px; /* tagline wraps in 2 lines */
       line-height: 1.5;
     }
 
@@ -109,64 +162,19 @@
       font-size: 1rem;
       font-weight: 400;
       color: #6b7280;
-      max-width: 480px;
+      max-width: 460px;
       line-height: 1.6;
     }
 
-    /* About Me Section */
-    .section-photo {
-      position: relative;
-      margin-right: 40px; /* pushes photo closer to text */
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
     }
 
-    .section-photo img {
-      width: 450px;   /* bigger About Me photo */
-      height: 480px;
-      object-fit: cover;
-      border-radius: 16px;
-      z-index: 2;
-      position: relative;
+    h3 {
+      margin-bottom: 8px;
     }
 
-    /* Decorative blobs behind About photo */
-    .blob {
-      position: absolute;
-      border-radius: 50%;
-      background: #dbeafe;
-      z-index: 1;
-    }
-    .blob1 {
-      width: 120px;
-      height: 120px;
-      top: -30px;
-      left: -40px;
-    }
-    .blob2 {
-      width: 80px;
-      height: 80px;
-      bottom: -20px;
-      left: 10px;
-    }
-    .blob3 {
-      width: 60px;
-      height: 60px;
-      bottom: 0;
-      right: -30px;
-    }
-
-    .section-text {
-      max-width: 600px;
-    }
-
-    .section.left-photo {
-      flex-direction: row;
-    }
-
-    .section.right-photo {
-      flex-direction: row-reverse;
-    }
-
-    /* Core Skills */
     .skills-grid {
       display: flex;
       gap: 60px;
@@ -175,6 +183,10 @@
 
     .skills-category {
       min-width: 200px;
+    }
+
+    .skills-category h3 {
+      margin-bottom: 8px;
     }
 
     .skills-category ul {
@@ -188,13 +200,11 @@
       font-size: 0.95rem;
     }
 
-    /* Projects */
     .project {
       margin-bottom: 50px;
       max-width: 800px;
     }
 
-    /* Certifications */
     .certifications {
       display: flex;
       gap: 60px;
@@ -231,7 +241,8 @@
         text-align: center;
       }
       .section-photo {
-        margin: 0 auto 20px auto;
+        margin-right: 0;
+        margin-bottom: 20px;
       }
       .skills-grid {
         flex-direction: column;
@@ -281,9 +292,9 @@
 <section id="about" class="section left-photo">
   <div class="section-photo">
     <img src="subbu.png" alt="Subramanian Veerappan">
-    <div class="blob blob1"></div>
-    <div class="blob blob2"></div>
-    <div class="blob blob3"></div>
+    <div class="blob top-left"></div>
+    <div class="blob.bottom-left"></div>
+    <div class="blob bottom-right"></div>
   </div>
   <div class="section-text">
     <h2>About Me</h2>
@@ -399,6 +410,5 @@
 <footer>
   © 2026 Subramanian Veerappan
 </footer>
-
 </body>
 </html>
