@@ -1,266 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Subramanian Veerappan | Process Design Engineer</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Subramanian Veerappan | Process Design Engineer</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      color: #1f2937;
-      background: #cfcfcf; /* darker grey */
-      line-height: 1.7;
-    }
+<style>
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: #1f2937;
+    background: #cfcfcf; /* slightly darker grey */
+    line-height: 1.7;
+  }
 
-    a {
-      color: #2563eb;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+  a {
+    color: #2563eb;
+    text-decoration: none;
+  }
+  a:hover { text-decoration: underline; }
 
-    nav {
-      position: sticky;
-      top: 0;
-      background: #ffffff;
-      border-bottom: 1px solid #d1d5db;
-      padding: 14px 10%;
-      z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-    }
-    nav a {
-      margin-left: 24px;
-      font-weight: 500;
-    }
+  nav {
+    position: sticky;
+    top: 0;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 14px 10%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  nav a { margin-left: 24px; font-weight: 500; }
 
-    .logo {
-      width: 50px;
-      height: 50px;
-      margin-right: auto;
-    }
+  .logo { width: 50px; height: 50px; margin-right: auto; }
 
-    section {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      padding: 80px 10%;
-      box-sizing: border-box;
-      min-height: auto;
-      position: relative;
-    }
+  section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 10%;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    position: relative;
+  }
 
-    .section-photo {
-      position: relative;
-      margin-right: 40px; /* moves photo closer to text */
-    }
+  /* Hero Section */
+  .hero {
+    min-height: 100vh;
+    gap: 60px;
+  }
+  .hero-text { max-width: 520px; }
+  .hero-name {
+    font-size: 3.2rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    line-height: 1.1;
+    white-space: nowrap; /* keep full name in one line */
+  }
+  .hero-title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #374151;
+    margin-bottom: 20px;
+    max-width: 460px; /* wraps tagline into 2 lines */
+    line-height: 1.4;
+  }
+  .hero-tagline {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #6b7280;
+    max-width: 460px; /* force two lines */
+    line-height: 1.7;
+  }
+  .hero-image img {
+    width: 500px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
 
-    .section-photo img {
-      width: 460px;   /* larger About Me photo */
-      height: 480px;
-      object-fit: cover;
-      border-radius: 16px;
-      background: #e5e7eb;
-      position: relative;
-      z-index: 2;
-    }
+  /* About Me Section */
+  #about {
+    gap: 40px; /* photo closer to text */
+    flex-direction: row;
+    position: relative;
+  }
+  #about .section-photo {
+    position: relative;
+    z-index: 2;
+  }
+  #about .section-photo img {
+    width: 380px; /* bigger photo */
+    height: auto;
+    border-radius: 16px;
+  }
+  /* Decorative organic shapes */
+  #about::before,
+  #about::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+    background: #ffffff;
+  }
+  #about::before {
+    width: 180px; height: 180px;
+    top: -40px; left: -60px;
+  }
+  #about::after {
+    width: 220px; height: 220px;
+    bottom: -60px; left: -40px;
+  }
 
-    /* Decorative shapes around photo (behind, not on photo) */
-    .blob {
-      position: absolute;
-      border-radius: 50%;
-      background: #dbeafe; /* soft blue */
-      z-index: 1;
-    }
-    .blob.top-left {
-      width: 120px;
-      height: 120px;
-      top: -40px;
-      left: -40px;
-    }
-    .blob.bottom-left {
-      width: 80px;
-      height: 80px;
-      bottom: -20px;
-      left: -20px;
-    }
-    .blob.bottom-right {
-      width: 100px;
-      height: 100px;
-      bottom: -40px;
-      right: -40px;
-    }
+  .section-text { max-width: 600px; }
 
-    .section-text {
-      max-width: 600px;
-    }
+  /* Skills, Projects, Certifications */
+  .section-photo img { width: 350px; height: auto; border-radius: 16px; object-fit: cover; }
+  .section.left-photo { flex-direction: row; gap: 40px; }
+  .section.right-photo { flex-direction: row-reverse; gap: 40px; }
 
-    .section.left-photo {
-      flex-direction: row;
-    }
+  h2 { font-size: 2rem; margin-bottom: 20px; }
+  h3 { margin-bottom: 8px; }
 
-    .section.right-photo {
-      flex-direction: row-reverse;
-    }
+  .skills-grid {
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+  .skills-category { min-width: 200px; }
+  .skills-category ul { list-style-type: disc; padding-left: 20px; }
+  .skills-category ul li { margin-bottom: 6px; color: #374151; font-size: 0.95rem; }
 
-    /* Hero Section */
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      padding: 120px 10%;
-      gap: 60px;
-      min-height: 100vh;
-    }
+  .project { margin-bottom: 50px; max-width: 800px; }
 
-    .hero-image img {
-      max-width: 580px;  /* bigger hero image */
-      width: 100%;
-      height: auto;
-      border-radius: 16px;
-      object-fit: cover;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-    }
+  .certifications { display: flex; gap: 60px; flex-wrap: wrap; }
+  .cert-block { flex: 1; min-width: 250px; }
 
-    .hero-text {
-      max-width: 520px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+  .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 28px;
+    background: #2563eb;
+    color: white;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+  }
 
-    .hero-name {
-      font-size: 3.2rem;
-      font-weight: 500;
-      margin-bottom: 6px;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      white-space: nowrap; /* name stays in one line */
-    }
+  footer {
+    text-align: center;
+    padding: 40px 10%;
+    border-top: 1px solid #e5e7eb;
+    color: #6b7280;
+    font-size: 0.9rem;
+  }
 
-    .hero-title {
-      font-size: 1.5rem;
-      font-weight: 400;
-      color: #374151;
-      margin-bottom: 16px;
-      max-width: 420px; /* tagline wraps in 2 lines */
-      line-height: 1.5;
-    }
-
-    .hero-tagline {
-      font-size: 1rem;
-      font-weight: 400;
-      color: #6b7280;
-      max-width: 460px;
-      line-height: 1.6;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-
-    h3 {
-      margin-bottom: 8px;
-    }
-
-    .skills-grid {
-      display: flex;
-      gap: 60px;
-      flex-wrap: wrap;
-    }
-
-    .skills-category {
-      min-width: 200px;
-    }
-
-    .skills-category h3 {
-      margin-bottom: 8px;
-    }
-
-    .skills-category ul {
-      list-style-type: disc;
-      padding-left: 20px;
-    }
-
-    .skills-category ul li {
-      margin-bottom: 6px;
-      color: #374151;
-      font-size: 0.95rem;
-    }
-
-    .project {
-      margin-bottom: 50px;
-      max-width: 800px;
-    }
-
-    .certifications {
-      display: flex;
-      gap: 60px;
-      flex-wrap: wrap;
-    }
-
-    .cert-block {
-      flex: 1;
-      min-width: 250px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 14px 28px;
-      background: #2563eb;
-      color: white;
-      border-radius: 8px;
-      font-weight: 500;
-      text-decoration: none;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 10%;
-      border-top: 1px solid #d1d5db;
-      color: #6b7280;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 900px) {
-      section {
-        flex-direction: column !important;
-        text-align: center;
-      }
-      .section-photo {
-        margin-right: 0;
-        margin-bottom: 20px;
-      }
-      .skills-grid {
-        flex-direction: column;
-        gap: 20px;
-      }
-      .certifications {
-        flex-direction: column;
-        gap: 20px;
-      }
-      nav {
-        justify-content: center;
-      }
-    }
-  </style>
+  @media (max-width: 900px) {
+    section { flex-direction: column !important; text-align: center; }
+    .section-photo { margin-bottom: 20px; }
+    .skills-grid { flex-direction: column; gap: 20px; }
+    .certifications { flex-direction: column; gap: 20px; }
+    nav { justify-content: center; }
+  }
+</style>
 </head>
+
 <body>
 
-<!-- Navigation -->
 <nav>
   <svg class="logo" viewBox="0 0 120 100">
     <text x="0" y="72" font-size="80" font-weight="bold" fill="#2563eb">SV</text>
@@ -282,7 +196,6 @@
       fluid flow, and real-world engineering constraints meet practical solutions.
     </p>
   </div>
-
   <div class="hero-image">
     <img src="industrial piping.png" alt="Process and thermal engineering systems">
   </div>
@@ -292,9 +205,6 @@
 <section id="about" class="section left-photo">
   <div class="section-photo">
     <img src="subbu.png" alt="Subramanian Veerappan">
-    <div class="blob top-left"></div>
-    <div class="blob.bottom-left"></div>
-    <div class="blob bottom-right"></div>
   </div>
   <div class="section-text">
     <h2>About Me</h2>
@@ -369,7 +279,7 @@
   </div>
 </section>
 
-<!-- Certifications Section -->
+<!-- Certifications -->
 <section id="certifications" class="section left-photo">
   <div class="section-photo">
     <img src="https://via.placeholder.com/250" alt="Certificate Illustration">
@@ -410,5 +320,6 @@
 <footer>
   © 2026 Subramanian Veerappan
 </footer>
+
 </body>
 </html>
