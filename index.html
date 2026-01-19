@@ -59,7 +59,7 @@
     /* Reusable split layout */
     .split {
       display: grid;
-      grid-template-columns: 0.95fr 1.45fr; /* title-side / content-side */
+      grid-template-columns: 0.95fr 1.45fr;
       gap: 56px;
       align-items: start;
     }
@@ -85,7 +85,7 @@
       white-space: nowrap; /* keep on one line on desktop */
     }
     .hero-title {
-      font-size: 1.22rem; /* reduced so it doesn’t compete with name */
+      font-size: 1.10rem; /* decreased further */
       font-weight: 500;
       color: #374151;
       margin: 0 0 12px 0;
@@ -100,27 +100,7 @@
       max-width: 62ch;
     }
 
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 18px;
-      background: var(--blue);
-      color: white;
-      border-radius: 10px;
-      font-weight: 500;
-      text-decoration: none;
-      border: 1px solid rgba(37,99,235,0.35);
-    }
-    .btn.secondary {
-      background: rgba(255,255,255,0.25);
-      color: var(--blue);
-      border: 1px solid rgba(37,99,235,0.25);
-      backdrop-filter: blur(6px);
-    }
-    .btn:hover { text-decoration: none; filter: brightness(0.98); }
-
-    /* Images */
+    /* Images (restore original feel: hero larger, about portrait medium) */
     .image {
       width: 100%;
       border-radius: var(--radius);
@@ -128,10 +108,17 @@
       display: block;
       object-fit: cover;
     }
-    /* hero image slightly smaller so the name fits */
-    .hero-image {
-      max-width: 560px;
-      justify-self: end;
+    /* Restore hero image presence (similar to your original) */
+    .hero-image img{
+      width: 680px;
+      max-width: 100%;
+      height: auto;
+    }
+    /* Restore about photo size (similar to your original) */
+    .about-photo img{
+      width: 460px;
+      max-width: 100%;
+      height: auto;
     }
 
     /* Title side */
@@ -191,6 +178,24 @@
       margin: 10px 0 0 0;
     }
 
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      background: var(--blue);
+      color: white;
+      border-radius: 10px;
+      font-weight: 500;
+      text-decoration: none;
+      border: 1px solid rgba(37,99,235,0.35);
+    }
+    .btn.secondary {
+      background: rgba(255,255,255,0.25);
+      color: var(--blue);
+      border: 1px solid rgba(37,99,235,0.25);
+      backdrop-filter: blur(6px);
+    }
+    .btn:hover { text-decoration: none; filter: brightness(0.98); }
+
     footer {
       text-align: center;
       padding: 40px 10%;
@@ -223,9 +228,8 @@
       .hero { min-height: unset; }
       .hero-name {
         font-size: 2.3rem;
-        white-space: normal; /* allow wrap on mobile */
+        white-space: normal;
       }
-      .hero-image { max-width: 100%; justify-self: start; }
     }
   </style>
 </head>
@@ -246,7 +250,7 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- Hero: LEFT text, RIGHT image -->
+  <!-- Hero: LEFT text, RIGHT image (restored large image, removed Download CV button) -->
   <section class="hero" id="top">
     <div class="split">
       <div class="split-title">
@@ -260,11 +264,6 @@
           Hands-on experience in process simulation, heat transfer analysis, equipment sizing, and safety-driven design,
           with practical exposure to PFDs, P&amp;IDs, PSV sizing, and time-based engineering analysis.
         </p>
-
-        <!-- Keep ONE clear CTA in hero -->
-        <div class="hero-actions">
-          <a class="btn" href="Subramanian_Resume.pdf" download>Download CV</a>
-        </div>
       </div>
 
       <div class="split-content hero-image">
@@ -273,15 +272,16 @@
     </div>
   </section>
 
-  <!-- About: keep your original structure (no nested 2-column inside content) -->
+  <!-- About: restored picture size + original text flow -->
   <section id="about">
     <div class="split reverse">
-      <div class="split-content">
+      <div class="split-content about-photo">
         <img class="image" src="subbu.png" alt="Subramanian Veerappan">
       </div>
 
       <div class="split-title">
         <h2>About Me</h2>
+
         <p style="max-width: 70ch; color:#374151; margin-top: 12px;">
           I’m a Process Design Engineer with FEED experience working on energy and industrial process projects.
           I enjoy the early design phase of projects — where process fundamentals, safety considerations, and real-world
@@ -327,7 +327,7 @@
     </div>
   </section>
 
-  <!-- Projects / Proof of Work: RIGHT title, LEFT content (reverse) -->
+  <!-- Projects / Proof of Work: RIGHT title, LEFT content -->
   <section id="work">
     <div class="split reverse">
       <div class="split-title">
@@ -439,7 +439,7 @@
               <li>Symbols, tagging philosophy, and line numbering</li>
               <li>Control loop basics and drafting conventions</li>
             </ul>
-            <p class="small"><strong>Output:</strong> Sample P&amp;ID drawing (can be self-created)</p>
+            <p class="small"><strong>Output:</strong> Sample P&amp;ID drawing (self-created)</p>
           </div>
 
           <div class="mini-card">
@@ -471,7 +471,7 @@
     </div>
   </section>
 
-  <!-- Skills: RIGHT title, LEFT compact cards (reverse) -->
+  <!-- Skills: RIGHT title, LEFT compact cards -->
   <section id="skills">
     <div class="split reverse">
       <div class="split-title">
@@ -490,7 +490,6 @@
               <li>BFD / PFD development</li>
               <li>P&amp;ID review &amp; commenting</li>
             </ul>
-            <p class="small"><strong>Note:</strong> I can create non-company sample BFD/PFD drawings.</p>
           </div>
 
           <div class="mini-card">
@@ -523,9 +522,9 @@
           <div class="mini-card" style="grid-column: 1 / -1;">
             <h3>Working Style</h3>
             <ul class="bullets">
-              <li>Clear communicator (engineering context + stakeholders)</li>
-              <li>Collaborative: works with system owners and reviewers</li>
-              <li>Presentation-ready reporting (PowerPoint/figures)</li>
+              <li>Clear communicator (engineering + stakeholders)</li>
+              <li>Collaborative in review cycles and handovers</li>
+              <li>Presentation-ready reporting (slides + figures)</li>
             </ul>
           </div>
         </div>
@@ -533,7 +532,7 @@
     </div>
   </section>
 
-  <!-- Certifications: LEFT title, RIGHT content -->
+  <!-- Certifications -->
   <section id="certifications">
     <div class="split">
       <div class="split-title">
@@ -577,7 +576,7 @@
     </div>
   </section>
 
-  <!-- Contact: RIGHT title, LEFT content (reverse) -->
+  <!-- Contact -->
   <section id="contact">
     <div class="split reverse">
       <div class="split-title">
