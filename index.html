@@ -38,7 +38,11 @@
 
     /* Ensure button links always look like buttons (fixes "dark/black" look) */
     a.btn{ color:#fff; text-decoration:none; }
-    a.btn:hover{ color:#fff; text-decoration:none; }
+    a.btn:hover{
+  color: var(--blue) !important;
+  text-decoration: none;
+}
+
     a.btn.secondary{ color: var(--blue); }
 
     nav{
@@ -203,15 +207,16 @@
     }
 
     /* Buttons */
-   .btn{
+ .btn{
   display: inline-block;
   padding: 12px 18px;
-  background: var(--blue);
-  color: #fff !important;   /* ✅ force white */
+  background: #fff;               /* ✅ white background */
+  color: var(--blue) !important;  /* ✅ blue text */
   border-radius: 10px;
   font-weight: 500;
   border: 1px solid rgba(37,99,235,0.35);
 }
+
 
     .btn.secondary{
       background: rgba(255,255,255,0.25);
