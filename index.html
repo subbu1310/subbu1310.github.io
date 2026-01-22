@@ -209,7 +209,6 @@
       transition: all 0.18s ease;
     }
 
-    /* Default blue button hover */
     .btn:hover{
       text-decoration: none;
       filter: brightness(0.95);
@@ -227,7 +226,7 @@
       font-size: 0.95rem;
     }
 
-    /* ✅ White button ONLY for Sample P&ID */
+    /* ✅ White Button style ONLY for Sample P&ID */
     .btn-white{
       background: #fff !important;
       color: var(--blue) !important;
@@ -236,7 +235,7 @@
 
     /* ✅ Hover effect for white button */
     .btn-white:hover{
-      background: rgba(37,99,235,0.10) !important; /* light blue */
+      background: rgba(37,99,235,0.10) !important;
       color: var(--blue) !important;
       box-shadow: 0 6px 18px rgba(0,0,0,0.12);
       transform: translateY(-2px);
@@ -352,6 +351,92 @@
     </div>
   </section>
 
+  <!-- Beyond Engineering -->
+  <section id="beyond">
+    <div class="split">
+      <div class="section-text">
+        <h2>Beyond Engineering</h2>
+        <p style="color: var(--muted); margin-top: 0;">
+          Volunteer work that shows coordination, planning, and working with diverse teams.
+        </p>
+      </div>
+
+      <div>
+        <div class="card">
+          <h3>Dansk ICYE, Camp Committee Member</h3>
+          <ul class="bullets">
+            <li>Support planning, coordination, and smooth execution of national youth camps.</li>
+            <li>Collaborate with committee members on logistics, activities, and participant engagement.</li>
+            <li>Represented Dansk ICYE at international ICYE camps across the EU to exchange best practices.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="work">
+    <div class="split reverse">
+      <div class="section-text">
+        <h2>Projects</h2>
+        <p style="color: var(--muted); margin-top: 0;">
+          Selected FEED and operations support projects focused on simulation, documentation, safety checks, and data analysis.
+        </p>
+
+        <p class="meta" style="margin-top:10px;">
+          <em>Note: Project documentation and deliverables are subject to confidentiality and cannot be shared publicly.</em>
+        </p>
+      </div>
+
+      <div>
+        <div class="projects-grid">
+          <div class="card">
+            <h3>Fredericia Pyrolysis Plant: FEED process simulation and deliverables (MAKEEN Energy)</h3>
+            <p class="meta">FEED study supporting early-stage design decisions and documentation (Fredericia, Denmark).</p>
+            <ul class="bullets">
+              <li>Built the initial steady-state process simulation model in <strong>DWSIM</strong>.</li>
+              <li>Generated <strong>stream data tables</strong> and key outputs to support design reviews.</li>
+              <li>Developed <strong>BFD</strong> and progressed to <strong>PFD</strong> as the design matured.</li>
+              <li>Reviewed early-stage <strong>P&amp;IDs</strong> and coordinated review comments with stakeholders.</li>
+              <li>Worked with <strong>system owners</strong> for technical review before final verification.</li>
+            </ul>
+            <p class="meta" style="margin-top:12px;">
+              <strong>Deliverables:</strong> DWSIM model basis · Stream tables · BFD · PFD · P&amp;ID review comments
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Randers Pyrolysis Plant: PSV revalidation and nitrogen blanketing support (MAKEEN Energy)</h3>
+            <p class="meta">FEED/design support focused on relief system validation and blanketing calculations (Randers, Denmark).</p>
+            <ul class="bullets">
+              <li>Supported <strong>PSV review and revalidation</strong> for an existing relief design.</li>
+              <li>Rechecked sizing basis against updated operating scenarios and assumptions.</li>
+              <li>Reviewed methodology documentation aligned with <strong>API 520</strong> principles.</li>
+              <li>Supported nitrogen blanketing calculations for safe shutdown/inert conditions.</li>
+            </ul>
+            <p class="meta" style="margin-top:12px;">
+              <strong>Deliverables:</strong> PSV review notes · Blanketing calculation support
+            </p>
+          </div>
+
+          <div class="card span-2">
+            <h3>Randers Pyrolysis Plant: Root cause analysis using SCADA data (MAKEEN Energy)</h3>
+            <p class="meta">Troubleshooting using historical SCADA/production data to identify repeatable performance patterns (Randers, Denmark).</p>
+            <ul class="bullets">
+              <li>Worked with large operational datasets (3 months of time-series values; millions of rows).</li>
+              <li>Extracted and structured events from sensor signals to identify stoppages and downtime patterns.</li>
+              <li>Developed <strong>Python</strong> scripts for data visualization to support root cause analysis.</li>
+              <li>Delivered reusable workflow for new exports from SCADA.</li>
+            </ul>
+            <p class="meta" style="margin-top:12px;">
+              <strong>Deliverables:</strong> Automated workflow · Trend graphs · Stoppage metrics
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Proof of Learning -->
   <section id="learning">
     <div class="split">
@@ -365,6 +450,34 @@
       <div>
         <div class="mini-grid">
           <div class="mini-card">
+            <h3>Pump sizing</h3>
+            <ul class="bullets">
+              <li>Duty point definition (Q/H) and operating range awareness</li>
+              <li>Curve interpretation and selection considerations</li>
+              <li>Basic NPSH concepts (conceptual level)</li>
+            </ul>
+            <p class="small"><strong>Output:</strong> Excel sizing template (in progress)</p>
+          </div>
+
+          <div class="mini-card">
+            <h3>Control valve sizing</h3>
+            <ul class="bullets">
+              <li>Cv estimation logic across different ΔP cases</li>
+              <li>Inputs, assumptions, and selection considerations</li>
+            </ul>
+            <p class="small"><strong>Output:</strong> Excel sizing template (in progress)</p>
+          </div>
+
+          <div class="mini-card">
+            <h3>PSV and flare sizing</h3>
+            <ul class="bullets">
+              <li>Relief scenario understanding and sizing workflow</li>
+              <li>API-driven approach familiarity</li>
+            </ul>
+            <p class="small"><strong>Output:</strong> PSV and flare sizing workbook (in progress)</p>
+          </div>
+
+          <div class="mini-card">
             <h3>P&amp;ID drafting standards</h3>
             <ul class="bullets">
               <li>Symbols, tagging philosophy, line numbering</li>
@@ -373,10 +486,140 @@
 
             <p class="small"><strong>Output:</strong> self-created</p>
 
-            <!-- ✅ WHITE button here only -->
+            <!-- ✅ changed button only here -->
             <a class="btn small btn-white" href="docs/Sample_PID.pdf" target="_blank" rel="noopener">
               View Sample P&amp;ID
             </a>
+          </div>
+
+          <div class="mini-card">
+            <h3>AutoCAD P&amp;ID practice</h3>
+            <ul class="bullets">
+              <li>Drafting discipline using AutoCAD P&amp;ID</li>
+              <li>Clean sample drawings (non-company)</li>
+            </ul>
+            <p class="small"><strong>Output:</strong> Sample drawings (self-created)</p>
+          </div>
+
+          <div class="mini-card">
+            <h3>Heat exchangers and compressors</h3>
+            <ul class="bullets">
+              <li>Heat exchanger fundamentals (LMTD concept, duty basics)</li>
+              <li>Compressors (selection concepts and key parameters)</li>
+            </ul>
+            <p class="small"><strong>Status:</strong> Currently learning</p>
+          </div>
+
+          <div class="mini-card" style="grid-column: 1 / -1;">
+            <h3>Lean Six Sigma (Yellow Belt)</h3>
+            <ul class="bullets">
+              <li>Structured problem-solving and continuous improvement mindset</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="split reverse">
+      <div class="section-text">
+        <h2>Skills</h2>
+        <p style="color: var(--muted); margin-top: 0;">
+          Core technical skills and working style.
+        </p>
+      </div>
+
+      <div>
+        <div class="mini-grid">
+          <div class="mini-card">
+            <h3>FEED and design</h3>
+            <ul class="bullets">
+              <li>Mass and energy balances</li>
+              <li>BFD and PFD development</li>
+              <li>P&amp;ID review and commenting</li>
+            </ul>
+          </div>
+
+          <div class="mini-card">
+            <h3>Process safety</h3>
+            <ul class="bullets">
+              <li>PSV sizing review (API 520 exposure)</li>
+              <li>Nitrogen blanketing and inerting calculations</li>
+              <li>Basis checks and scenario evaluation</li>
+            </ul>
+          </div>
+
+          <div class="mini-card">
+            <h3>Tools</h3>
+            <ul class="bullets">
+              <li>DWSIM (steady-state simulation)</li>
+              <li>Excel (engineering calculations and reporting)</li>
+              <li>AutoCAD P&amp;ID (practice)</li>
+            </ul>
+          </div>
+
+          <div class="mini-card">
+            <h3>Data and reporting</h3>
+            <ul class="bullets">
+              <li>Python (automation, plotting)</li>
+              <li>Trend analysis for RCA</li>
+              <li>Technical documentation</li>
+            </ul>
+          </div>
+
+          <div class="mini-card" style="grid-column: 1 / -1;">
+            <h3>Working style</h3>
+            <ul class="bullets">
+              <li>Clear communicator (engineering and stakeholders)</li>
+              <li>Collaborative in review cycles and handovers</li>
+              <li>Presentation-ready reporting (slides and figures)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications">
+    <div class="split">
+      <div class="section-text">
+        <h2>Certifications</h2>
+        <p style="color: var(--muted); margin-top: 0;">
+          Verified training and current upskilling focus.
+        </p>
+      </div>
+
+      <div>
+        <div class="mini-grid">
+          <div class="mini-card">
+            <h3>Certified</h3>
+            <ul class="bullets">
+              <li>
+                <strong>Lean Six Sigma Yellow Belt</strong> — Quality Gurus
+                <a class="view-link" href="docs/Lean_SSYB_certificate.pdf" target="_blank" rel="noopener">(View)</a>
+              </li>
+              <li>
+                <strong>PSV sizing and flare sizing</strong> — EIEPD
+                <a class="view-link" href="docs/PSV_and_FLARE_certificate.pdf" target="_blank" rel="noopener">(View)</a>
+              </li>
+              <li>
+                <strong>AutoCAD P&amp;ID essential training</strong> — LinkedIn Learning
+                <a class="view-link" href="docs/PID_training_certificate.pdf" target="_blank" rel="noopener">(View)</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mini-card">
+            <h3>Currently learning</h3>
+            <ul class="bullets">
+              <li>Pump sizing (centrifugal) — Udemy</li>
+              <li>Control valve sizing — Udemy</li>
+              <li>Compressors fundamentals</li>
+              <li>Heat exchanger design and operation</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -408,7 +651,7 @@
             </a>
           </p>
 
-          <!-- ✅ View CV stays original blue -->
+          <!-- ✅ View CV unchanged -->
           <a class="btn" href="Subramanian_Resume.pdf" target="_blank" rel="noopener">View CV</a>
         </div>
       </div>
