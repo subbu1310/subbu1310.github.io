@@ -24,6 +24,8 @@
 
     * { box-sizing: border-box; }
 
+    html{ scroll-behavior: smooth; }
+
     body{
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -208,32 +210,27 @@
       border: 1px solid rgba(37,99,235,0.35);
       transition: all 0.18s ease;
     }
-
     .btn:hover{
       text-decoration: none;
       filter: brightness(0.95);
     }
-
     .btn.secondary{
       background: rgba(255,255,255,0.25);
       color: var(--blue);
       border: 1px solid rgba(37,99,235,0.25);
       backdrop-filter: blur(6px);
     }
-
     .btn.small{
       padding: 9px 14px;
       font-size: 0.95rem;
     }
 
-    /* ✅ White Button style ONLY for Sample P&ID */
+    /* White Button style ONLY for Sample P&ID */
     .btn-white{
       background: #fff !important;
       color: var(--blue) !important;
       border: 1px solid rgba(37,99,235,0.35);
     }
-
-    /* ✅ Hover effect for white button */
     .btn-white:hover{
       background: rgba(37,99,235,0.10) !important;
       color: var(--blue) !important;
@@ -280,6 +277,7 @@
       .hero .hero-image{ padding-top: 0; }
 
       .about-photo img{ height: auto; }
+      .hero-image img{ margin-left: 0; }
     }
   </style>
 </head>
@@ -287,16 +285,17 @@
 <body>
 
   <nav>
-    <svg class="logo" viewBox="0 0 120 100" aria-label="SV logo">
+    <svg class="logo" viewBox="0 0 120 100" aria-label="SV logo" role="img">
       <text x="0" y="72" font-size="80" font-weight="bold" fill="#2563eb">SV</text>
     </svg>
 
+    <!-- ✅ Nav order now matches section order -->
     <a href="#about">About</a>
-    <a href="#beyond">Beyond</a>
     <a href="#work">Work</a>
     <a href="#learning">Learning</a>
     <a href="#skills">Skills</a>
     <a href="#certifications">Certifications</a>
+    <a href="#beyond">Beyond</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -311,7 +310,7 @@
         </h2>
 
         <p class="hero-value">
-          I turn process data and simulations into FEED ready deliverables, stream tables, PFDs and P&amp;IDs, datasheets, sizing checks, and safety-driven design decisions.
+          I turn process data and simulations into FEED-ready deliverables: stream tables, PFDs and P&amp;IDs, datasheets, sizing checks, and safety-driven design decisions.
         </p>
       </div>
 
@@ -350,7 +349,6 @@
       </div>
     </div>
   </section>
-
 
   <!-- Projects -->
   <section id="work">
@@ -464,7 +462,6 @@
 
             <p class="small"><strong>Output:</strong> self-created</p>
 
-            <!-- ✅ changed button only here -->
             <a class="btn small btn-white" href="docs/Sample_PID.pdf" target="_blank" rel="noopener">
               View Sample P&amp;ID
             </a>
@@ -604,16 +601,10 @@
     </div>
   </section>
 
-    <!-- Beyond Engineering -->
+  <!-- ✅ Beyond Engineering MOVED here + ✅ Alternating layout (title on RIGHT, content on LEFT) -->
   <section id="beyond">
-    <div class="split">
-      <div class="section-text">
-        <h2>Beyond Engineering</h2>
-        <p style="color: var(--muted); margin-top: 0;">
-          Volunteer work that shows coordination, planning, and working with diverse teams.
-        </p>
-      </div>
-
+    <div class="split reverse">
+      <!-- LEFT: content card -->
       <div>
         <div class="card">
           <h3>Dansk ICYE, Camp Committee Member</h3>
@@ -624,9 +615,17 @@
           </ul>
         </div>
       </div>
+
+      <!-- RIGHT: title + description -->
+      <div class="section-text">
+        <h2>Beyond Engineering</h2>
+        <p style="color: var(--muted); margin-top: 0;">
+          Volunteer work that demonstrates coordination, planning, and working with diverse teams.
+        </p>
+      </div>
     </div>
   </section>
-  
+
   <!-- Contact -->
   <section id="contact">
     <div class="split reverse">
@@ -652,7 +651,6 @@
             </a>
           </p>
 
-          <!-- ✅ View CV unchanged -->
           <a class="btn" href="Subramanian_Resume.pdf" target="_blank" rel="noopener">View CV</a>
         </div>
       </div>
