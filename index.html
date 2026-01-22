@@ -81,13 +81,12 @@
     .hero .split{
       align-items: center;
     }
-  .hero .hero-text{
-  padding-top: 0;
-}
-.hero .hero-image{
-  padding-top: var(--hero-top-offset);
-}
-
+    .hero .hero-text{
+      padding-top: 0;
+    }
+    .hero .hero-image{
+      padding-top: var(--hero-top-offset);
+    }
 
     .hero-name{
       font-size: 3.0rem;
@@ -96,33 +95,23 @@
       line-height: 1.05;
       white-space: nowrap;
     }
- 
 
-    /* Make it 2–3 lines by allowing more width */
-    .hero-tagline{
+    .hero-title{
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #374151;
+      margin: 0 0 18px 0;
+      line-height: 1.5;
+      max-width: 78ch;
+    }
+
+    .hero-value{
       font-size: 1rem;
       font-weight: 400;
       color: var(--muted);
       margin: 0;
       max-width: 96ch;
     }
-    .hero-title{
-  font-size: 1.05rem;
-  font-weight: 500;         /* keep subtitle medium */
-  color: #374151;
-  margin: 0 0 18px 0;       /* more space below subtitle */
-  line-height: 1.5;
-  max-width: 78ch;
-}
-
-.hero-value{
-    font-size: 1rem;
-      font-weight: 400;
-      color: var(--muted);
-      margin: 0;
-      max-width: 96ch;
-}
-
 
     /* Images */
     .image{
@@ -163,7 +152,7 @@
     #about::after { width: 220px; height: 220px; bottom: -60px; left: -40px; }
     #about .section-photo, #about .section-text{ position: relative; z-index: 1; }
 
-    /* Section text/photo helpers (more like your original structure) */
+    /* Section text/photo helpers */
     .section-text h2{
       font-size: 2rem;
       margin: 0 0 12px 0;
@@ -238,6 +227,12 @@
       backdrop-filter: blur(6px);
     }
 
+    /* Small "View" link style (optional) */
+    .view-link{
+      font-weight: 500;
+      margin-left: 6px;
+    }
+
     footer{
       text-align: center;
       padding: 40px 10%;
@@ -292,29 +287,27 @@
   </nav>
 
   <!-- Hero -->
- <section class="hero" id="top">
-  <div class="split">
-    <div class="hero-text">
-      <h1 class="hero-name">Subramanian Veerappan</h1>
+  <section class="hero" id="top">
+    <div class="split">
+      <div class="hero-text">
+        <h1 class="hero-name">Subramanian Veerappan</h1>
 
-      <h2 class="hero-title">
-        Process Design Engineer (FEED / Simulation / Process Safety)
-      </h2>
+        <h2 class="hero-title">
+          Process Design Engineer (FEED / Simulation / Process Safety)
+        </h2>
 
-      <p class="hero-value">
-        I turn process data and simulations into FEED-ready deliverables, stream tables, PFDs and P&IDs, datasheets, sizing checks, and safety-driven design decisions.
-      </p>
+        <p class="hero-value">
+          I turn process data and simulations into FEED-ready deliverables, stream tables, PFDs and P&IDs, datasheets, sizing checks, and safety-driven design decisions.
+        </p>
+      </div>
 
-    
+      <div class="hero-image">
+        <img class="image" src="industrial piping.png" alt="Industrial process systems">
+      </div>
     </div>
+  </section>
 
-    <div class="hero-image">
-      <img class="image" src="industrial piping.png" alt="Industrial process systems">
-    </div>
-  </div>
-</section>
-
-  <!-- About (kept like your original: title + paragraphs) -->
+  <!-- About -->
   <section id="about">
     <div class="split about-split">
       <div class="section-photo about-photo">
@@ -331,14 +324,14 @@
         <p>
           In my role, I’ve worked on developing and validating process simulation models, preparing mass and energy balances,
           generating stream data tables, and supporting equipment-related design activities. As part of FEED deliverables,
-          I’ve reviewed key process documentation such as PFDs and P&amp;IDs, ensuring alignment between process intent,
+          I’ve reviewed key process documentation such as PFDs and P&IDs, ensuring alignment between process intent,
           design requirements, and documentation standards. I’ve also contributed to process safety work, including PSV sizing
           activities and heat transfer calculations related to nitrogen blanketing to ensure positive pressure during safe shutdown scenarios.
         </p>
         <p>
           I also enjoy working with data and use tools like Python to automate calculations, analyze large datasets, and present engineering
           insights more clearly. I’m continuously building my technical depth through focused learning in areas like pump and valve sizing,
-          compressors, heat exchangers, and P&amp;ID drafting standards.
+          compressors, heat exchangers, and P&ID drafting standards.
         </p>
       </div>
     </div>
@@ -367,7 +360,7 @@
     </div>
   </section>
 
-  <!-- Projects / Proof of Work -->
+  <!-- Projects -->
   <section id="work">
     <div class="split reverse">
       <div class="section-text">
@@ -375,9 +368,17 @@
         <p style="color: var(--muted); margin-top: 0;">
           Selected FEED and operations support projects focused on simulation, documentation, safety checks, and data analysis.
         </p>
+
         <p class="meta" style="margin-top:10px;">
-  <em>Note: Project documentation and deliverables are subject to confidentiality and cannot be shared publicly.</em>
-</p>
+          <em>Note: Project documentation and deliverables are subject to confidentiality and cannot be shared publicly.</em>
+        </p>
+
+        <!-- View Sample P&ID (opens in browser) -->
+        <p style="margin-top: 16px;">
+          <a class="btn secondary" href="docs/Sample_PID.pdf" target="_blank" rel="noopener">
+            View Sample P&amp;ID
+          </a>
+        </p>
       </div>
 
       <div>
@@ -415,12 +416,11 @@
             <h3>Randers Pyrolysis Plant: Root cause analysis using SCADA data (MAKEEN Energy)</h3>
             <p class="meta">Troubleshooting using historical SCADA/production data to identify repeatable performance patterns (Randers, Denmark).</p>
             <ul class="bullets">
-  <li>Worked with large operational datasets (3 months of time-series values; millions of rows).</li>
-  <li>Extracted and structured events from sensor signals to identify stoppages and downtime patterns.</li>
-  <li>Developed <strong>Python</strong> scripts for data visualization to support root cause analysis.</li>
-  <li>Delivered reusable workflow for new exports from SCADA.</li>
-</ul>
-
+              <li>Worked with large operational datasets (3 months of time-series values; millions of rows).</li>
+              <li>Extracted and structured events from sensor signals to identify stoppages and downtime patterns.</li>
+              <li>Developed <strong>Python</strong> scripts for data visualization to support root cause analysis.</li>
+              <li>Delivered reusable workflow for new exports from SCADA.</li>
+            </ul>
             <p class="meta" style="margin-top:12px;">
               <strong>Deliverables:</strong> Automated workflow · Trend graphs · Stoppage metrics
             </p>
@@ -584,9 +584,18 @@
           <div class="mini-card">
             <h3>Certified</h3>
             <ul class="bullets">
-              <li><strong>Lean Six Sigma Yellow Belt</strong> — Quality Gurus</li>
-              <li><strong>PSV sizing and flare sizing</strong> — EIEPD</li>
-              <li><strong>AutoCAD P&amp;ID essential training</strong> — LinkedIn Learning</li>
+              <li>
+                <strong>Lean Six Sigma Yellow Belt</strong> — Quality Gurus
+                <a class="view-link" href="docs/Lean_SSYB_certificate.pdf" target="_blank" rel="noopener">(View)</a>
+              </li>
+              <li>
+                <strong>PSV sizing and flare sizing</strong> — EIEPD
+                <a class="view-link" href="docs/PSV_and_FLARE_certificate.pdf" target="_blank" rel="noopener">(View)</a>
+              </li>
+              <li>
+                <strong>AutoCAD P&amp;ID essential training</strong> — LinkedIn Learning
+                <a class="view-link" href="docs/PID_training_certificate.pdf" target="_blank" rel="noopener">(View)</a>
+              </li>
             </ul>
           </div>
 
@@ -621,6 +630,7 @@
           <p style="margin: 0 0 10px 0;">
             Email: <a href="mailto:vrsubramanian13@gmail.com"><strong>vrsubramanian13@gmail.com</strong></a>
           </p>
+
           <p style="margin: 0 0 18px 0;">
             LinkedIn:
             <a href="https://www.linkedin.com/in/subramanian-veerappan-b195011a0" target="_blank" rel="noopener">
@@ -628,7 +638,8 @@
             </a>
           </p>
 
-          <a class="btn" href="Subramanian_Resume.pdf" download>Download CV</a>
+          <!-- Optional: keep CV as download, or change to view -->
+          <a class="btn" href="Subramanian_Resume.pdf" target="_blank" rel="noopener">View CV</a>
         </div>
       </div>
     </div>
@@ -638,3 +649,4 @@
 
 </body>
 </html>
+
