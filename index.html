@@ -19,14 +19,12 @@
       --blue: #2563eb;
       --radius: 40px;
       --shadow: 0 10px 26px rgba(0,0,0,0.10);
-
-      /* Adjust only this if you want hero text+image to sit lower/higher together */
       --hero-top-offset: 16px;
     }
 
     * { box-sizing: border-box; }
 
-    body {
+    body{
       margin: 0;
       font-family: 'Inter', sans-serif;
       color: var(--text);
@@ -34,10 +32,16 @@
       line-height: 1.7;
     }
 
-    a { color: var(--blue); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    /* Links */
+    a{ color: var(--blue); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
 
-    nav {
+    /* Ensure button links always look like buttons (fixes "dark/black" look) */
+    a.btn{ color:#fff; text-decoration:none; }
+    a.btn:hover{ text-decoration:none; }
+    a.btn.secondary{ color: var(--blue); }
+
+    nav{
       position: sticky;
       top: 0;
       background: rgba(255,255,255,0.6);
@@ -51,18 +55,18 @@
       gap: 18px;
       flex-wrap: wrap;
     }
-    nav a { font-weight: 500; color: #1f2937; }
-    .logo { width: 50px; height: 50px; margin-right: auto; }
+    nav a{ font-weight: 500; color: #1f2937; }
+    .logo{ width: 50px; height: 50px; margin-right: auto; }
 
-    section {
+    section{
       padding: 80px 10%;
       position: relative;
     }
 
-    /* Split layout (alternating) */
+    /* Layout */
     .split{
       display: grid;
-      grid-template-columns: 1.05fr 1.35fr; /* give hero text more room */
+      grid-template-columns: 1.05fr 1.35fr;
       gap: 56px;
       align-items: start;
     }
@@ -78,15 +82,8 @@
       display: grid;
       align-items: center;
     }
-    .hero .split{
-      align-items: center;
-    }
-    .hero .hero-text{
-      padding-top: 0;
-    }
-    .hero .hero-image{
-      padding-top: var(--hero-top-offset);
-    }
+    .hero .split{ align-items: center; }
+    .hero .hero-image{ padding-top: var(--hero-top-offset); }
 
     .hero-name{
       font-size: 3.0rem;
@@ -95,7 +92,6 @@
       line-height: 1.05;
       white-space: nowrap;
     }
-
     .hero-title{
       font-size: 1.05rem;
       font-weight: 500;
@@ -104,7 +100,6 @@
       line-height: 1.5;
       max-width: 78ch;
     }
-
     .hero-value{
       font-size: 1rem;
       font-weight: 400;
@@ -121,8 +116,6 @@
       display: block;
       object-fit: cover;
     }
-
-    /* Hero image: wider */
     .hero-image img{
       width: 760px;
       max-width: 100%;
@@ -130,7 +123,7 @@
       margin-left: 30px;
     }
 
-    /* About image: closer to text + taller */
+    /* About */
     .about-split{ gap: 34px; align-items: center; }
     .about-photo img{
       width: 520px;
@@ -140,7 +133,7 @@
       object-position: center top;
     }
 
-    /* About decorative circles (balls) */
+    /* About decorative circles */
     #about::before, #about::after{
       content: "";
       position: absolute;
@@ -152,7 +145,6 @@
     #about::after { width: 220px; height: 220px; bottom: -60px; left: -40px; }
     #about .section-photo, #about .section-text{ position: relative; z-index: 1; }
 
-    /* Section text/photo helpers */
     .section-text h2{
       font-size: 2rem;
       margin: 0 0 12px 0;
@@ -178,7 +170,7 @@
     .bullets{ margin: 0; padding-left: 18px; }
     .bullets li{ margin: 6px 0; color: #374151; }
 
-    /* Projects: 2 on top + 1 below */
+    /* Projects grid */
     .projects-grid{
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -186,7 +178,7 @@
     }
     .projects-grid .span-2{ grid-column: 1 / -1; }
 
-    /* Learning/Skills compact cards */
+    /* Mini cards */
     .mini-grid{
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -210,6 +202,7 @@
       margin: 10px 0 0 0;
     }
 
+    /* Buttons */
     .btn{
       display: inline-block;
       padding: 12px 18px;
@@ -217,7 +210,6 @@
       color: white;
       border-radius: 10px;
       font-weight: 500;
-      text-decoration: none;
       border: 1px solid rgba(37,99,235,0.35);
     }
     .btn.secondary{
@@ -226,12 +218,12 @@
       border: 1px solid rgba(37,99,235,0.25);
       backdrop-filter: blur(6px);
     }
-.btn.small{
-  padding: 9px 14px;
-  font-size: 0.95rem;
-}
+    .btn.small{
+      padding: 9px 14px;
+      font-size: 0.95rem;
+    }
 
-    /* Small "View" link style (optional) */
+    /* Inline certificate view links */
     .view-link{
       font-weight: 500;
       margin-left: 6px;
@@ -266,8 +258,7 @@
 
       .hero{ min-height: unset; }
       .hero-name{ font-size: 2.3rem; white-space: normal; }
-
-      .hero .hero-text, .hero .hero-image{ padding-top: 0; }
+      .hero .hero-image{ padding-top: 0; }
 
       .about-photo img{ height: auto; }
     }
@@ -301,7 +292,7 @@
         </h2>
 
         <p class="hero-value">
-          I turn process data and simulations into FEED ready deliverables, stream tables, PFDs and P&IDs, datasheets, sizing checks, and safety-driven design decisions.
+          I turn process data and simulations into FEED ready deliverables, stream tables, PFDs and P&amp;IDs, datasheets, sizing checks, and safety-driven design decisions.
         </p>
       </div>
 
@@ -328,14 +319,14 @@
         <p>
           In my role, I’ve worked on developing and validating process simulation models, preparing mass and energy balances,
           generating stream data tables, and supporting equipment-related design activities. As part of FEED deliverables,
-          I’ve reviewed key process documentation such as PFDs and P&IDs, ensuring alignment between process intent,
+          I’ve reviewed key process documentation such as PFDs and P&amp;IDs, ensuring alignment between process intent,
           design requirements, and documentation standards. I’ve also contributed to process safety work, including PSV sizing
           activities and heat transfer calculations related to nitrogen blanketing to ensure positive pressure during safe shutdown scenarios.
         </p>
         <p>
           I also enjoy working with data and use tools like Python to automate calculations, analyze large datasets, and present engineering
           insights more clearly. I’m continuously building my technical depth through focused learning in areas like pump and valve sizing,
-          compressors, heat exchangers, and P&ID drafting standards.
+          compressors, heat exchangers, and P&amp;ID drafting standards.
         </p>
       </div>
     </div>
@@ -376,7 +367,6 @@
         <p class="meta" style="margin-top:10px;">
           <em>Note: Project documentation and deliverables are subject to confidentiality and cannot be shared publicly.</em>
         </p>
-
       </div>
 
       <div>
@@ -468,20 +458,19 @@
             <p class="small"><strong>Output:</strong> PSV and flare sizing workbook (in progress)</p>
           </div>
 
-  <div class="mini-card">
-  <h3>P&amp;ID drafting standards</h3>
-  <ul class="bullets">
-    <li>Symbols, tagging philosophy, line numbering</li>
-    <li>Drafting conventions and control loop basics</li>
-  </ul>
+          <div class="mini-card">
+            <h3>P&amp;ID drafting standards</h3>
+            <ul class="bullets">
+              <li>Symbols, tagging philosophy, line numbering</li>
+              <li>Drafting conventions and control loop basics</li>
+            </ul>
 
-  <p class="small"><strong>Output:</strong> self-created</p>
+            <p class="small"><strong>Output:</strong> self-created</p>
 
-  <a class="btn small" href="docs/Sample_PID.pdf" target="_blank" rel="noopener">
-    View Sample P&amp;ID
-  </a>
-</div>
-
+            <a class="btn small" href="docs/Sample_PID.pdf" target="_blank" rel="noopener">
+              View Sample P&amp;ID
+            </a>
+          </div>
 
           <div class="mini-card">
             <h3>AutoCAD P&amp;ID practice</h3>
@@ -642,7 +631,6 @@
             </a>
           </p>
 
-          <!-- Optional: keep CV as download, or change to view -->
           <a class="btn" href="Subramanian_Resume.pdf" target="_blank" rel="noopener">View CV</a>
         </div>
       </div>
@@ -653,4 +641,3 @@
 
 </body>
 </html>
-
