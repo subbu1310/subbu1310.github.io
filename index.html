@@ -211,11 +211,11 @@
       transition: all 0.18s ease;
     }
     .btn:hover{
-  text-decoration: none;
-  filter: brightness(0.95);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
-}
+      text-decoration: none;
+      filter: brightness(0.95);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    }
 
     .btn.secondary{
       background: rgba(255,255,255,0.25);
@@ -292,7 +292,6 @@
       <text x="0" y="72" font-size="80" font-weight="bold" fill="#2563eb">SV</text>
     </svg>
 
-    <!-- ✅ Nav order now matches section order -->
     <a href="#about">About</a>
     <a href="#work">Work</a>
     <a href="#learning">Learning</a>
@@ -350,12 +349,11 @@
           compressors, heat exchangers, and P&amp;ID drafting standards.
         </p>
 
-        <!-- Recommendation letter (About Me) -->
-<div style="margin-top: 18px;">
-  <a class="btn" href="docs/David_Letter.pdf" target="_blank" rel="noopener">
-    View Document (Recommendation Letter)
-  </a>
-</div>
+        <div style="margin-top: 18px;">
+          <a class="btn" href="docs/David_Letter.pdf" target="_blank" rel="noopener">
+            View Document (Recommendation Letter)
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -442,7 +440,10 @@
               <li>Curve interpretation and selection considerations</li>
               <li>Cavitation and NPSH concepts </li>
             </ul>
-            <p class="small"><strong>Output:</strong> Excel sizing template (in progress)</p>
+            <p class="small"><strong>Output:</strong> Self created pump sizing Excel template</p>
+            <a class="btn small btn-white" href="docs/Pump_Sample_Example.xlsx" download>
+              Download Pump sizing Excel
+            </a>
           </div>
 
           <div class="mini-card">
@@ -470,10 +471,7 @@
               <li>Symbols, tagging philosophy, line numbering</li>
               <li>Drafting conventions and control loop basics</li>
             </ul>
-
             <p class="small"><strong>Output:</strong> Read, interpret, and use P&IDs in real industrial processes </p>
-
-           
           </div>
 
           <div class="mini-card">
@@ -483,7 +481,7 @@
               <li>Clean sample drawings (non-company)</li>
             </ul>
             <p class="small"><strong>Output:</strong> Sample drawings (self-created)</p>
-             <a class="btn small btn-white" href="docs/Sample_PID.pdf" target="_blank" rel="noopener">
+            <a class="btn small btn-white" href="docs/Sample_PID.pdf" target="_blank" rel="noopener">
               View Sample P&amp;ID
             </a>
           </div>
@@ -596,13 +594,16 @@
                 <strong>AutoCAD P&amp;ID essential training</strong> — LinkedIn Learning
                 <a class="view-link" href="docs/PID_training_certificate.pdf" target="_blank" rel="noopener">(View)</a>
               </li>
+              <li>
+                <strong>Pump sizing (centrifugal)</strong> — Udemy
+                <a class="view-link" href="docs/Pump_Sizing.pdf" target="_blank" rel="noopener">(View)</a>
+              </li>
             </ul>
           </div>
 
           <div class="mini-card">
             <h3>Currently learning</h3>
             <ul class="bullets">
-              <li>Pump sizing (centrifugal) — Udemy</li>
               <li>Control valve sizing — Udemy</li>
               <li>Compressors fundamentals</li>
               <li>Heat exchanger design and operation</li>
@@ -613,66 +614,59 @@
     </div>
   </section>
 
-<!-- Beyond Engineering (opposite layout: title LEFT, card RIGHT) -->
-<section id="beyond">
-  <div class="split reverse">
-    <!-- LEFT: title + description -->
-    <div class="section-text">
-      <h2>Beyond Engineering</h2>
-      <p style="color: var(--muted); margin-top: 0;">
-        Volunteer work that demonstrates coordination, planning, and working with diverse teams.
-      </p>
-    </div>
+  <!-- Beyond Engineering -->
+  <section id="beyond">
+    <div class="split reverse">
+      <div class="section-text">
+        <h2>Beyond Engineering</h2>
+        <p style="color: var(--muted); margin-top: 0;">
+          Volunteer work that demonstrates coordination, planning, and working with diverse teams.
+        </p>
+      </div>
 
-    <!-- RIGHT: content card -->
-    <div>
-      <div class="card">
-        <h3>Dansk ICYE, Camp Committee Member</h3>
-        <ul class="bullets">
-          <li>Support planning, coordination, and smooth execution of national youth camps.</li>
-          <li>Collaborate with committee members on logistics, activities, and participant engagement.</li>
-          <li>Represented Dansk ICYE at international ICYE camps across the EU to exchange best practices.</li>
-        </ul>
+      <div>
+        <div class="card">
+          <h3>Dansk ICYE, Camp Committee Member</h3>
+          <ul class="bullets">
+            <li>Support planning, coordination, and smooth execution of national youth camps.</li>
+            <li>Collaborate with committee members on logistics, activities, and participant engagement.</li>
+            <li>Represented Dansk ICYE at international ICYE camps across the EU to exchange best practices.</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
+  <!-- Contact -->
+  <section id="contact">
+    <div class="split reverse">
+      <div>
+        <div class="card">
+          <p class="meta" style="margin-top:0;">Email is the fastest way to reach me.</p>
 
-  <!-- Contact (title RIGHT, card LEFT) -->
-<section id="contact">
-  <div class="split reverse">
+          <p style="margin: 0 0 10px 0;">
+            Email: <a href="mailto:vrsubramanian13@gmail.com"><strong>vrsubramanian13@gmail.com</strong></a>
+          </p>
 
-    <!-- LEFT: details card -->
-    <div>
-      <div class="card">
-        <p class="meta" style="margin-top:0;">Email is the fastest way to reach me.</p>
+          <p style="margin: 0 0 18px 0;">
+            LinkedIn:
+            <a href="https://www.linkedin.com/in/subramanian-veerappan-b195011a0" target="_blank" rel="noopener">
+              <strong>linkedin.com/in/subramanian-veerappan-b195011a0</strong>
+            </a>
+          </p>
 
-        <p style="margin: 0 0 10px 0;">
-          Email: <a href="mailto:vrsubramanian13@gmail.com"><strong>vrsubramanian13@gmail.com</strong></a>
+          <a class="btn" href="Subramanian_Resume.pdf" target="_blank" rel="noopener">View CV</a>
+        </div>
+      </div>
+
+      <div class="section-text">
+        <h2>Contact</h2>
+        <p style="color: var(--muted); margin-top: 0;">
+          If you'd like to connect regarding process engineering opportunities, feel free to reach out.
         </p>
-
-        <p style="margin: 0 0 18px 0;">
-          LinkedIn:
-          <a href="https://www.linkedin.com/in/subramanian-veerappan-b195011a0" target="_blank" rel="noopener">
-            <strong>linkedin.com/in/subramanian-veerappan-b195011a0</strong>
-          </a>
-        </p>
-
-        <a class="btn" href="Subramanian_Resume.pdf" target="_blank" rel="noopener">View CV</a>
       </div>
     </div>
-
-    <!-- RIGHT: title + description -->
-    <div class="section-text">
-      <h2>Contact</h2>
-      <p style="color: var(--muted); margin-top: 0;">
-        If you'd like to connect regarding process engineering opportunities, feel free to reach out.
-      </p>
-    </div>
-
-  </div>
-</section>
+  </section>
 
   <footer>© 2026 Subramanian Veerappan</footer>
 
