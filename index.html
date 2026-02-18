@@ -19,10 +19,13 @@
       --blue: #2563eb;
       --radius: 40px;
       --shadow: 0 10px 26px rgba(0,0,0,0.10);
+      --hero-top-offset: 16px;
 
-      --btn-grad: linear-gradient(135deg, #2563eb, #1d4ed8);
-      --btn-shadow: 0 12px 26px rgba(37,99,235,0.30);
-      --btn-shadow-hover: 0 18px 36px rgba(37,99,235,0.38);
+      /* Button polish (single style for ALL buttons) */
+      --btn-grad: linear-gradient(135deg, #2563eb 0%, #1d4ed8 55%, #1e40af 100%);
+      --btn-shadow: 0 12px 26px rgba(37,99,235,0.28);
+      --btn-shadow-hover: 0 18px 40px rgba(37,99,235,0.36);
+      --btn-ring: rgba(37,99,235,0.35);
     }
 
     * { box-sizing: border-box; }
@@ -36,249 +39,674 @@
       line-height: 1.7;
     }
 
+    /* Links */
     a{ color: var(--blue); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
 
-    /* Navigation */
     nav{
       position: sticky;
       top: 0;
-      background: rgba(255,255,255,0.65);
+      background: rgba(255,255,255,0.6);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--line);
       padding: 14px 10%;
+      z-index: 10;
       display: flex;
       align-items: center;
+      justify-content: flex-end;
       gap: 18px;
-      z-index: 10;
+      flex-wrap: wrap;
     }
     nav a{ font-weight: 500; color: #1f2937; }
-    .logo{ margin-right: auto; width: 48px; }
+    .logo{ width: 50px; height: 50px; margin-right: auto; }
 
-    section{ padding: 80px 10%; }
+    section{
+      padding: 80px 10%;
+      position: relative;
+    }
 
     /* Layout */
     .split{
       display: grid;
-      grid-template-columns: 1fr 1.3fr;
+      grid-template-columns: 1.05fr 1.35fr;
       gap: 56px;
-      align-items: center;
+      align-items: start;
     }
+    .split.reverse{
+      grid-template-columns: 1.35fr 1.05fr;
+    }
+    .split.reverse > :nth-child(1){ order: 2; }
+    .split.reverse > :nth-child(2){ order: 1; }
 
     /* Hero */
-    .hero{ min-height: 100vh; }
-    .hero-name{ font-size: 3rem; font-weight: 600; margin: 0; }
-    .hero-title{ color: #374151; margin: 12px 0 18px; }
-    .hero-bullets{ padding-left: 18px; }
+    .hero{
+      min-height: 100vh;
+      display: grid;
+      align-items: center;
+    }
+    .hero .split{ align-items: center; }
+    .hero .hero-image{ padding-top: var(--hero-top-offset); }
+
+    .hero-name{
+      font-size: 3.0rem;
+      font-weight: 600;
+      margin: 0 0 10px 0;
+      line-height: 1.05;
+      white-space: nowrap;
+    }
+    .hero-title{
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #374151;
+      margin: 0 0 18px 0;
+      line-height: 1.5;
+      max-width: 78ch;
+    }
+    .hero-value{
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--muted);
+      margin: 0;
+      max-width: 96ch;
+    }
+
+    /* Hero bullets */
+    .hero-bullets{
+      margin: 12px 0 0 0;
+      padding-left: 18px;
+      color: #374151;
+      max-width: 96ch;
+    }
     .hero-bullets li{ margin: 6px 0; }
 
+    /* Images */
     .image{
       width: 100%;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
+      display: block;
+      object-fit: cover;
+    }
+    .hero-image img{
+      width: 760px;
+      max-width: 100%;
+      height: auto;
+      margin-left: 30px;
     }
 
-    /* Text */
-    h2{ font-size: 2rem; margin-bottom: 12px; }
-    .meta{ color: var(--muted); font-size: 0.95rem; }
+    /* About */
+    .about-split{ gap: 34px; align-items: center; }
+    .about-photo img{
+      width: 520px;
+      max-width: 100%;
+      height: 600px;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    /* About decorative circles */
+    #about::before, #about::after{
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      z-index: 0;
+      background: rgba(255,255,255,0.55);
+    }
+    #about::before{ width: 180px; height: 180px; top: -40px; left: -60px; }
+    #about::after { width: 220px; height: 220px; bottom: -60px; left: -40px; }
+    #about .section-photo, #about .section-text{ position: relative; z-index: 1; }
+
+    .section-text h2{
+      font-size: 2rem;
+      margin: 0 0 12px 0;
+      line-height: 1.2;
+    }
+    .section-text p{
+      margin: 0 0 12px 0;
+      color: #374151;
+      max-width: 72ch;
+    }
+    .section-text p:last-child{ margin-bottom: 0; }
 
     /* Cards */
-    .card, .mini-card{
+    .card{
       background: rgba(255,255,255,0.35);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 22px;
       backdrop-filter: blur(6px);
     }
+    .card h3{ margin: 0 0 8px 0; font-size: 1.05rem; color: #111827; }
+    .meta{ color: var(--muted); font-size: 0.95rem; margin: 0 0 14px 0; }
+    .bullets{ margin: 0; padding-left: 18px; }
+    .bullets li{ margin: 6px 0; color: #374151; }
 
-    .bullets{ padding-left: 18px; }
-    .bullets li{ margin: 6px 0; }
-
-    /* Grids */
+    /* Projects grid */
     .projects-grid{
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 18px;
     }
     .projects-grid .span-2{ grid-column: 1 / -1; }
 
+    /* Mini cards grid */
     .mini-grid{
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .mini-card{
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.35);
+      backdrop-filter: blur(6px);
+    }
+    .mini-card h3{
+      margin: 0 0 8px 0;
+      font-size: 1.02rem;
+      color: #111827;
+    }
+    .mini-card .small{
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 10px 0 0 0;
+    }
+
+    /* Sample deliverables: 3 cards per row */
+    #deliverables .mini-grid{
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
     }
 
-    /* Buttons – ONE STYLE EVERYWHERE */
+    /* Buttons — ONE style everywhere */
     .btn{
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      gap: 8px;
       padding: 12px 18px;
       background: var(--btn-grad);
-      color: #fff;
+      color: #fff !important;
       border-radius: 12px;
       font-weight: 600;
-      border: none;
+      border: 1px solid rgba(37,99,235,0.35);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
       box-shadow: var(--btn-shadow);
-      transition: all 0.18s ease;
-      margin-top: 10px;
+      letter-spacing: 0.1px;
+      text-decoration: none !important;
+      user-select: none;
     }
     .btn:hover{
+      filter: brightness(1.02);
       transform: translateY(-2px);
       box-shadow: var(--btn-shadow-hover);
+    }
+    .btn:active{
+      transform: translateY(0px);
+      filter: brightness(0.98);
+      box-shadow: var(--btn-shadow);
+    }
+    .btn:focus-visible{
+      outline: 3px solid var(--btn-ring);
+      outline-offset: 3px;
+    }
+    .btn.small{
+      padding: 10px 14px;
+      font-size: 0.95rem;
+      border-radius: 12px;
+    }
+
+    /* Inline certificate view links */
+    .view-link{
+      font-weight: 500;
+      margin-left: 6px;
     }
 
     footer{
       text-align: center;
-      padding: 40px;
+      padding: 40px 10%;
       border-top: 1px solid var(--line);
-      background: rgba(255,255,255,0.45);
       color: var(--muted);
+      font-size: 0.9rem;
+      background: rgba(255,255,255,0.45);
+      backdrop-filter: blur(8px);
     }
 
-    /* Responsive */
     @media (max-width: 1100px){
-      .mini-grid{ grid-template-columns: repeat(2, 1fr); }
+      #deliverables .mini-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
-    @media (max-width: 900px){
-      .split{ grid-template-columns: 1fr; }
-      .projects-grid{ grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 680px){
-      .mini-grid{ grid-template-columns: 1fr; }
-      nav{ flex-wrap: wrap; justify-content: center; }
+    @media (max-width: 980px){
+      nav{ padding: 14px 7%; justify-content: center; }
       .logo{ margin-right: 0; }
+
+      section{ padding: 70px 7%; }
+
+      .split, .split.reverse{
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .split.reverse > :nth-child(1),
+      .split.reverse > :nth-child(2){ order: initial; }
+
+      .projects-grid{ grid-template-columns: 1fr; }
+      .projects-grid .span-2{ grid-column: auto; }
+
+      .mini-grid{ grid-template-columns: 1fr; }
+      #deliverables .mini-grid{ grid-template-columns: 1fr; }
+
+      .hero{ min-height: unset; }
+      .hero-name{ font-size: 2.3rem; white-space: normal; }
+      .hero .hero-image{ padding-top: 0; }
+
+      .about-photo img{ height: auto; }
+      .hero-image img{ margin-left: 0; }
     }
   </style>
 </head>
 
 <body>
 
-<nav>
-  <svg class="logo" viewBox="0 0 120 100">
-    <text x="0" y="72" font-size="80" font-weight="bold" fill="#2563eb">SV</text>
-  </svg>
-  <a href="#about">About</a>
-  <a href="#work">Projects</a>
-  <a href="#deliverables">Sample deliverables</a>
-  <a href="#skills">Skills</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <nav>
+    <svg class="logo" viewBox="0 0 120 100" aria-label="SV logo" role="img">
+      <text x="0" y="72" font-size="80" font-weight="bold" fill="#2563eb">SV</text>
+    </svg>
 
-<!-- Hero -->
-<section class="hero">
-  <div class="split">
-    <div>
-      <h1 class="hero-name">Subramanian Veerappan</h1>
-      <h2 class="hero-title">Process Design Engineer (FEED / Simulation / Process Safety)</h2>
-      <ul class="hero-bullets">
-        <li>Stream tables</li>
-        <li>BFDs, PFDs &amp; P&amp;IDs</li>
-        <li>Equipment datasheets</li>
-        <li>Equipment &amp; safety sizing checks</li>
-      </ul>
-      <a class="btn" href="#contact">Contact me</a>
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#deliverables">Sample deliverables</a>
+    <a href="#skills">Skills</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#beyond">Beyond</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="split">
+      <div class="hero-text">
+        <h1 class="hero-name">Subramanian Veerappan</h1>
+
+        <h2 class="hero-title">
+          Process Design Engineer (FEED / Simulation / Process Safety)
+        </h2>
+
+        <p class="hero-value">
+          I turn process data and simulations into FEED-ready deliverables:
+        </p>
+
+        <ul class="hero-bullets">
+          <li>Stream tables</li>
+          <li>BFDs, PFDs &amp; P&amp;IDs</li>
+          <li>Equipment datasheets</li>
+          <li>Sizing checks (pumps, valves, PSV)</li>
+          <li>Safety-driven design decisions</li>
+        </ul>
+      </div>
+
+      <div class="hero-image">
+        <img class="image" src="FEED_image.png" alt="Industrial process systems">
+      </div>
     </div>
-    <img class="image" src="FEED_image.png" alt="Process engineering">
-  </div>
-</section>
+  </section>
 
-<!-- About -->
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    Process Design Engineer with FEED experience in energy and industrial process projects,
-    combining simulation, documentation, and process safety.
-  </p>
-  <a class="btn" href="#contact">Contact me</a>
-</section>
+  <!-- About -->
+  <section id="about">
+    <div class="split about-split">
+      <div class="section-photo about-photo">
+        <img class="image" src="subbu.png" alt="Subramanian Veerappan">
+      </div>
 
-<!-- Projects -->
-<section id="work">
-  <h2>Projects</h2>
-  <p class="meta">Selected FEED and operational support projects.</p>
+      <div class="section-text">
+        <h2>About Me</h2>
+        <p>
+          I’m a Process Design Engineer with FEED experience working on energy and industrial process projects.
+          I’m especially interested in how engineering fundamentals, process safety, and real operating constraints come together in practical systems.
+        </p>
+        <p>
+          In my role, I’ve worked on developing and validating process simulation models, preparing mass and energy balances,
+          generating stream data tables, and supporting equipment-related design activities. As part of FEED deliverables,
+          I’ve developed and reviewed key process documentation such as PFDs and P&amp;IDs, ensuring alignment between process intent,
+          design requirements, and documentation standards. I’ve also contributed to process safety work, including PSV sizing
+          activities and heat transfer calculations related to nitrogen blanketing to ensure positive pressure during safe shutdown scenarios.
+        </p>
+        <p>
+          I also enjoy working with data and use tools like Python to automate calculations, analyze large datasets, and present engineering
+          insights more clearly. I’m continuously building my technical depth through focused learning in areas like pump and valve sizing,
+          compressors, heat exchangers, and P&amp;ID drafting standards.
+        </p>
 
-  <div class="projects-grid">
-    <div class="card">
-      <h3>Fredericia Pyrolysis Plant – FEED</h3>
-      <ul class="bullets">
-        <li>DWSIM simulation</li>
-        <li>Stream tables & PFDs</li>
-        <li>P&ID reviews</li>
-      </ul>
+        <!-- Changed: removed recommendation letter here; added Contact me -->
+        <div style="margin-top: 18px;">
+          <a class="btn" href="#contact">Contact me</a>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>Randers Pyrolysis Plant – PSV & Blanketing</h3>
-      <ul class="bullets">
-        <li>PSV revalidation</li>
-        <li>Nitrogen blanketing checks</li>
-      </ul>
-    </div>
-
-    <div class="card span-2">
-      <h3>SCADA Data Analysis</h3>
-      <ul class="bullets">
-        <li>Python-based root cause analysis</li>
-        <li>Downtime metrics & visualization</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- Sample Deliverables -->
-<section id="deliverables">
-  <h2>Sample deliverables</h2>
-  <p class="meta">Examples of FEED-style calculations and templates.</p>
-
-  <div class="mini-grid">
-    <div class="mini-card">
-      <h3>Pump sizing</h3>
-      <p class="meta">Excel-based sizing & datasheets</p>
-      <a class="btn" href="#">Download</a>
-    </div>
-
-    <div class="mini-card">
-      <h3>Valve sizing</h3>
-      <p class="meta">ISA-based control valve sizing</p>
-      <a class="btn" href="#">Download</a>
-    </div>
-
-    <div class="mini-card">
-      <h3>PSV sizing</h3>
-      <p class="meta">API 520 / 521 workflow</p>
+  <!-- Projects (changed layout: title on top, cards below) -->
+  <section id="work">
+    <div class="section-text" style="margin-bottom: 18px;">
+      <h2>Projects</h2>
+      <p style="color: var(--muted); margin-top: 0;">
+        Selected FEED and operations support projects focused on simulation, documentation, safety checks, and data analysis.
+      </p>
+      <p class="meta" style="margin-top:10px;">
+        <em>Note: Project documentation and deliverables are subject to confidentiality and cannot be shared publicly.</em>
+      </p>
     </div>
 
-    <div class="mini-card">
-      <h3>P&amp;ID drafting</h3>
-      <p class="meta">AutoCAD P&amp;ID samples</p>
-      <a class="btn" href="#">View</a>
+    <div class="projects-grid">
+      <div class="card">
+        <h3>Fredericia Pyrolysis Plant: FEED process simulation and deliverables (MAKEEN Energy)</h3>
+        <ul class="bullets">
+          <li>Built the initial steady-state process simulation model in <strong>DWSIM</strong>.</li>
+          <li>Generated <strong>stream data tables</strong> and key outputs to support design reviews.</li>
+          <li>Developed <strong>BFD</strong> and progressed to <strong>PFD</strong> as the design matured.</li>
+          <li>Reviewed early-stage <strong>P&amp;IDs</strong> and coordinated review comments with stakeholders.</li>
+          <li>Worked with <strong>system owners</strong> for technical review before final verification.</li>
+        </ul>
+        <p class="meta" style="margin-top:12px;">
+          <strong>Deliverables:</strong> DWSIM model basis · Stream tables · BFD · PFD · P&amp;ID review comments
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Randers Pyrolysis Plant: PSV revalidation and nitrogen blanketing support (MAKEEN Energy)</h3>
+        <ul class="bullets">
+          <li>Supported <strong>PSV review and revalidation</strong> for an existing relief design.</li>
+          <li>Rechecked sizing basis against updated operating scenarios and assumptions.</li>
+          <li>Reviewed methodology documentation aligned with <strong>API 521</strong> principles.</li>
+          <li>Supported nitrogen blanketing calculations for safe shutdown/inert conditions.</li>
+        </ul>
+        <p class="meta" style="margin-top:12px;">
+          <strong>Deliverables:</strong> PSV review notes · Blanketing calculation support
+        </p>
+      </div>
+
+      <div class="card span-2">
+        <h3>Randers Pyrolysis Plant: Root cause analysis using SCADA data (MAKEEN Energy)</h3>
+        <ul class="bullets">
+          <li>Worked with large operational datasets (3 months of time-series values; millions of rows).</li>
+          <li>Extracted and structured events from sensor signals to identify stoppages and downtime patterns.</li>
+          <li>Developed <strong>Python</strong> scripts for data visualization to support root cause analysis.</li>
+          <li>Delivered reusable workflow for new exports from SCADA.</li>
+        </ul>
+        <p class="meta" style="margin-top:12px;">
+          <strong>Deliverables:</strong> Automated workflow · Trend graphs · Stoppage metrics
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sample Deliverables (changed layout: title on top, cards below + 3 columns) -->
+  <section id="deliverables">
+    <div class="section-text" style="margin-bottom: 18px;">
+      <h2>Sample deliverables</h2>
+      <p style="color: var(--muted); margin-top: 0;">
+        Structured learning converted into practical templates, calculation notes, and sample deliverables.
+      </p>
     </div>
 
-    <div class="mini-card">
-      <h3>Heat exchanger</h3>
-      <p class="meta">Thermal sizing Excel</p>
-      <a class="btn" href="#">Download</a>
+    <div class="mini-grid">
+
+      <!-- Pump -->
+      <div class="mini-card">
+        <h3>Pump sizing and modelling</h3>
+        <ul class="bullets">
+          <li>Duty point definition (Q/H) and operating range awareness</li>
+          <li>Cavitation and NPSH concepts</li>
+          <li>Curve interpretation and selection considerations</li>
+        </ul>
+        <p class="small"><strong>Output:</strong> Self created pump sizing Excel templates, datasheet preparation, selection of pumps</p>
+        <a class="btn small" href="docs/Pump_Sample_Example.xlsx" download>
+          Download Pump Sizing Sample Excel
+        </a>
+      </div>
+
+      <!-- Valve -->
+      <div class="mini-card">
+        <h3>Valve and Control valve sizing</h3>
+        <ul class="bullets">
+          <li>Selection of appropriate valve types and characteristics based on process conditions</li>
+          <li>Sizing methodology using ISA standard for compressible and incompressible flow cases</li>
+          <li>Plotting control valve installation curves and analyzed operating point variation</li>
+        </ul>
+        <p class="small"><strong>Output:</strong> Self created valve sizing Excel sheets, selection of valves</p>
+        <a class="btn small" href="docs/Valve_Sample.xlsx" download>
+          Download Sample Valve Sizing Excel
+        </a>
+      </div>
+
+      <!-- PSV -->
+      <div class="mini-card">
+        <h3>PSV and flare sizing</h3>
+        <ul class="bullets">
+          <li>Relief scenarios understanding and sizing workflow</li>
+          <li>API521 and API520 driven approach familiarity</li>
+          <li>Flare sizing and concepts</li>
+        </ul>
+        <p class="small"><strong>Output:</strong> Ability to identify governing relief scenarios and perform PSV orifice sizing</p>
+      </div>
+
+      <!-- P&ID -->
+      <div class="mini-card">
+        <h3>P&amp;ID drafting standards &amp; AutoCAD P&amp;ID practice</h3>
+        <ul class="bullets">
+          <li>P&amp;ID symbols, tagging philosophy, line numbering and drafting conventions</li>
+          <li>Control loop representation and instrumentation basics</li>
+          <li>Hands-on drafting using AutoCAD P&amp;ID with clean sample drawings (non-company)</li>
+        </ul>
+        <p class="small"><strong>Output:</strong> Read, interpret, and develop P&amp;IDs for industrial processes</p>
+        <a class="btn small" href="docs/Sample_PID.pdf" target="_blank" rel="noopener">
+          View Sample P&amp;ID
+        </a>
+      </div>
+
+      <!-- Heat Exchanger -->
+      <div class="mini-card">
+        <h3>Heat exchanger design, operation &amp; maintenance</h3>
+        <ul class="bullets">
+          <li>Core heat-transfer fundamentals: LMTD / effectiveness concepts, duty balance, fouling and overall U</li>
+          <li>TEMA driven selection: choosing exchanger type and configuration based on service constraints</li>
+          <li>TEMA based design workflow including thermal sizing and pressure drop calculations (tube &amp; shell side)</li>
+        </ul>
+        <p class="small"><strong>Output:</strong> Sample heat exchanger sizing Excel (self-created)</p>
+        <a class="btn small" href="docs/HX_Sample.xlsx" download>
+          Download HX Sample Excel
+        </a>
+      </div>
+
+      <!-- Compressor -->
+      <div class="mini-card">
+        <h3>Compressors sizing and types</h3>
+        <ul class="bullets">
+          <li>Compressor types and selection: centrifugal vs. reciprocating</li>
+          <li>Preliminary sizing fundamentals: flow, pressure ratio, power estimation and key datasheet parameters</li>
+        </ul>
+        <p class="small"><strong>Status:</strong> Currently learning</p>
+      </div>
+
+      <!-- Lean -->
+      <div class="mini-card" style="grid-column: 1 / -1;">
+        <h3>Lean Six Sigma (Yellow Belt)</h3>
+        <ul class="bullets">
+          <li>Structured problem-solving and continuous improvement mindset</li>
+        </ul>
+      </div>
+
     </div>
+  </section>
 
-    <div class="mini-card">
-      <h3>Compressors</h3>
-      <p class="meta">Currently learning</p>
+  <!-- Skills -->
+  <section id="skills">
+    <div class="split reverse">
+      <div class="section-text">
+        <h2>Skills</h2>
+        <p style="color: var(--muted); margin-top: 0;">
+          Core technical skills and working style.
+        </p>
+      </div>
+
+      <div>
+        <div class="mini-grid">
+          <div class="mini-card">
+            <h3>FEED and design</h3>
+            <ul class="bullets">
+              <li>Mass and energy balances</li>
+              <li>BFD, PFD and P&amp;ID development</li>
+              <li>Datasheets developments</li>
+              <li>Technical description and Process documentation</li>
+            </ul>
+          </div>
+
+          <div class="mini-card">
+            <h3>Tools</h3>
+            <ul class="bullets">
+              <li>DWSIM</li>
+              <li>Aspen Hysys and FluidFlow (Still learning)</li>
+              <li>AutoCAD plant 3D</li>
+              <li>Microsoft Visio</li>
+            </ul>
+          </div>
+
+          <div class="mini-card">
+            <h3>Process safety</h3>
+            <ul class="bullets">
+              <li>PSV sizing and calculation</li>
+              <li>Nitrogen blanketing and inerting calculations</li>
+              <li>Basis checks and scenario evaluation</li>
+            </ul>
+          </div>
+
+          <div class="mini-card">
+            <h3>Data and reporting</h3>
+            <ul class="bullets">
+              <li>Python</li>
+              <li>Excel</li>
+              <li>MATLAB</li>
+            </ul>
+          </div>
+
+          <div class="mini-card" style="grid-column: 1 / -1;">
+            <h3>Working style</h3>
+            <ul class="bullets">
+              <li>Clear communicator</li>
+              <li>Collaborative in review cycles and handovers</li>
+              <li>Presentation skills</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Contact -->
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: <strong>vrsubramanian13@gmail.com</strong></p>
-  <a class="btn" href="Subramanian_Resume.pdf">View CV</a>
-</section>
+  <!-- Certifications -->
+  <section id="certifications">
+    <div class="split">
+      <div class="section-text">
+        <h2>Certifications</h2>
+        <p style="color: var(--muted); margin-top: 0;">
+          Verified training and current upskilling focus.
+        </p>
+      </div>
 
-<footer>
-  © 2026 Subramanian Veerappan
-</footer>
+      <div>
+        <div class="mini-grid">
+          <div class="mini-card">
+            <h3>Certified</h3>
+            <ul class="bullets">
+              <li>
+                <strong>Lean Six Sigma Yellow Belt</strong>
+                <a class="view-link" href="docs/Lean_SSYB_certificate.pdf" target="_blank" rel="noopener">(View)</a>
+              </li>
+              <li>
+                <strong>PSV sizing and flare sizing</strong>
+                <a class="view-link" href="docs/PSV_and_FLARE_certificate.pdf" target="_blank" rel="noopener">(View)</a>
+              </li>
+              <li>
+                <strong>AutoCAD P&amp;ID essential training</strong>
+                <a class="view-link" href="docs/PID_training_certificate.pdf" target="_blank" rel="noopener">(View)</a>
+              </li>
+              <li>
+                <strong>Pump sizing and modelling</strong>
+                <a class="view-link" href="docs/Pump_Sizing.pdf" target="_blank" rel="noopener">(View)</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mini-card">
+            <h3>Currently learning</h3>
+            <ul class="bullets">
+              <li>Control valve sizing</li>
+              <li>Compressors fundamentals</li>
+              <li>Heat exchanger design and operation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beyond Engineering -->
+  <section id="beyond">
+    <div class="split reverse">
+      <div class="section-text">
+        <h2>Beyond Engineering</h2>
+        <p style="color: var(--muted); margin-top: 0;">
+          Volunteer work that demonstrates coordination, planning, and working with diverse teams.
+        </p>
+      </div>
+
+      <div>
+        <div class="card">
+          <h3>Dansk ICYE, Camp Committee Member</h3>
+          <ul class="bullets">
+            <li>Support planning, coordination, and smooth execution of national youth camps.</li>
+            <li>Collaborate with committee members on logistics, activities, and participant engagement.</li>
+            <li>Represented Dansk ICYE at international ICYE camps across the EU to exchange best practices.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact (recommendation letter moved near View CV) -->
+  <section id="contact">
+    <div class="split reverse">
+      <div>
+        <div class="card">
+          <p class="meta" style="margin-top:0;">Email is the fastest way to reach me.</p>
+
+          <p style="margin: 0 0 10px 0;">
+            Email: <a href="mailto:vrsubramanian13@gmail.com"><strong>vrsubramanian13@gmail.com</strong></a>
+          </p>
+
+          <p style="margin: 0 0 18px 0;">
+            LinkedIn:
+            <a href="https://www.linkedin.com/in/subramanian-veerappan-b195011a0" target="_blank" rel="noopener">
+              <strong>linkedin.com/in/subramanian-veerappan-b195011a0</strong>
+            </a>
+          </p>
+
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a class="btn" href="Subramanian_Resume.pdf" target="_blank" rel="noopener">View CV</a>
+            <a class="btn" href="docs/David_Letter.pdf" target="_blank" rel="noopener">Recommendation letter</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-text">
+        <h2>Contact</h2>
+        <p style="color: var(--muted); margin-top: 0;">
+          If you'd like to connect regarding process engineering opportunities, feel free to reach out.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2026 Subramanian Veerappan</footer>
 
 </body>
 </html>
