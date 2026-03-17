@@ -22,7 +22,7 @@
 
   <style>
     :root{
-      --bg: #f8f7f4;
+      --bg: #eeecea;
       --text: #111827;
       --muted: #6b7280;
       --line: rgba(229,231,235,0.9);
@@ -56,7 +56,7 @@
     nav{
       position: sticky;
       top: 0;
-      background: rgba(255,255,255,0.6);
+      background: rgba(255,255,255,0.75);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--line);
       padding: 14px 10%;
@@ -337,28 +337,21 @@
     <a href="#contact">Contact</a>
   </nav>
 <!-- Hero -->
- <section class="hero" id="top">
-  <div class="split">
-    <div class="hero-text">
-      <p style="font-size:0.78rem;font-weight:600;letter-spacing:0.08em;color:#185FA5;margin:0 0 10px 0;text-transform:uppercase">Process Design Engineer · Randers, Denmark · Open to relocation across EU</p>
-      <h1 class="hero-name">Subramanian Veerappan</h1>
-      <h2 class="hero-title">
-        I take pyrolysis and energy projects from simulation to FEED-ready documentation — P&amp;IDs, stream tables, and safety calculations.
-      </h2>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
-        <span style="font-size:0.85rem;padding:4px 10px;border-radius:6px;background:#E6F1FB;color:#0C447C;font-weight:500">DWSIM</span>
-        <span style="font-size:0.85rem;padding:4px 10px;border-radius:6px;background:#E6F1FB;color:#0C447C;font-weight:500">P&amp;ID</span>
-        <span style="font-size:0.85rem;padding:4px 10px;border-radius:6px;background:#E6F1FB;color:#0C447C;font-weight:500">PSV sizing</span>
-        <span style="font-size:0.85rem;padding:4px 10px;border-radius:6px;background:#E6F1FB;color:#0C447C;font-weight:500">API 521</span>
-        <span style="font-size:0.85rem;padding:4px 10px;border-radius:6px;background:#E6F1FB;color:#0C447C;font-weight:500">Mass &amp; energy balances</span>
-        <span style="font-size:0.85rem;padding:4px 10px;border-radius:6px;background:#E6F1FB;color:#0C447C;font-weight:500">Equipment sizing</span>
-      </div>
-    </div>
-    <div class="hero-image">
-      <img class="image" src="FEED_image.png" alt="Industrial process systems">
-    </div>
+ <div class="hero-text">
+  <h1 class="hero-name">Subramanian Veerappan</h1>
+  <p style="font-size:0.95rem;font-weight:600;letter-spacing:0.06em;color:#185FA5;margin:0 0 14px 0;text-transform:uppercase">Process Design Engineer &nbsp;·&nbsp; Randers, Denmark &nbsp;·&nbsp; Open to EU</p>
+  <h2 class="hero-title">
+    I convert projects from simulation to FEED ready deliverables — P&amp;IDs, stream tables, Equipment datasheets and safety calculations.
+  </h2>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+    <span style="font-size:0.85rem;padding:4px 10px;border-radius:6px;background:#E6F1FB;color:#0C447C;font-weight:500">DWSIM</span>
+    <span style="font-size:0.85rem;padding:4px 10px;border-radius:6px;background:#E6F1FB;color:#0C447C;font-weight:500">P&amp;ID</span>
+    <span style="font-size:0.85rem;padding:4px 10px;border-radius:6px;background:#E6F1FB;color:#0C447C;font-weight:500">PSV sizing</span>
+    <span style="font-size:0.85rem;padding:4px 10px;border-radius:6px;background:#E6F1FB;color:#0C447C;font-weight:500">Equipment datasheets</span>
+    <span style="font-size:0.85rem;padding:4px 10px;border-radius:6px;background:#E6F1FB;color:#0C447C;font-weight:500">Mass &amp; energy balances</span>
+    <span style="font-size:0.85rem;padding:4px 10px;border-radius:6px;background:#E6F1FB;color:#0C447C;font-weight:500">Equipment sizing</span>
   </div>
-</section>
+</div>
 
   <!-- About -->
   <section id="about">
@@ -403,11 +396,14 @@
   </div>
 
   <div class="mini-grid">
-
-    <div class="mini-card">
+<!-- PID -->
+  <div class="mini-card">
   <h3>P&amp;ID Drafting</h3>
-  <div style="background:#E6F1FB;border-radius:8px;padding:10px;margin:8px 0 10px 0;display:flex;align-items:center;justify-content:center">
-    <svg width="200" height="56" viewBox="0 0 200 56" xmlns="http://www.w3.org/2000/svg">
+  <p class="small">
+    I can read, interpret, and develop P&amp;IDs using AutoCAD P&amp;ID — including symbol usage, instrument tagging, line numbering, and control loop representation.
+  </p>
+  <div style="background:#E6F1FB;border-radius:6px;padding:8px 12px;margin:8px 0 10px 0;display:flex;align-items:center;gap:10px">
+    <svg width="120" height="38" viewBox="0 0 200 56" xmlns="http://www.w3.org/2000/svg">
       <line x1="10" y1="28" x2="38" y2="28" stroke="#185FA5" stroke-width="1"/>
       <rect x="38" y="16" width="24" height="24" rx="2" fill="none" stroke="#185FA5" stroke-width="1"/>
       <text x="50" y="31" text-anchor="middle" font-size="7" fill="#185FA5" font-family="Inter,sans-serif">T-101</text>
@@ -424,9 +420,10 @@
       <circle cx="88" cy="7" r="4" fill="none" stroke="#185FA5" stroke-width="0.8"/>
       <text x="94" y="9" font-size="6" fill="#185FA5" font-family="Inter,sans-serif">FIC</text>
     </svg>
+    <span style="font-size:0.8rem;color:#185FA5;font-style:italic">Practice drawing — AutoCAD P&amp;ID</span>
   </div>
   <p class="small">
-    Practice drawing — instrument loop with control valve, vessel tagging, and line numbering. Drawn using AutoCAD P&amp;ID to demonstrate symbol usage and drafting conventions.
+    <strong>Output:</strong> Sample drawings for training purposes — demonstrates symbol placement, tagging conventions, and control loops
   </p>
   <a class="btn small" href="docs/Sample_PID.pdf" target="_blank" rel="noopener">
     View Sample
